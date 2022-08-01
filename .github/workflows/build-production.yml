@@ -26,4 +26,4 @@ jobs:
       - name: Publish Library
         run: |
           npm config set //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN
-          npm run publish
+          npm publish
