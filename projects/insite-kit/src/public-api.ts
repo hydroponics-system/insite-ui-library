@@ -32,3 +32,4 @@ export * from './lib/service/subscription/notification/notification.service';
 export * from './lib/service/subscription/stomp.config';
 export * from './lib/service/subscription/subscription.service';
 export * from './lib/service/url-service/url.service';
+export * from './lib/test/abstract-test-bed';

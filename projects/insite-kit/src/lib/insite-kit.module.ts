@@ -27,7 +27,6 @@ import { UsernamePipe } from './service/pipe/format-user-name.pipe';
 import { NotificationMessagePipe } from './service/pipe/notification-message.pipe';
 import { WebRoleTranslationPipe } from './service/pipe/web-role-translation.pipe';
 import { RequestService } from './service/request/request.service';
-import { StompWebSocketService } from './service/subscription/subscription.service';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -56,7 +55,7 @@ export function tokenGetter() {
   ],
   imports: [
     CommonModule,
-    RouterModule,
+    RouterModule.forRoot([]),
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
@@ -90,14 +89,13 @@ export function tokenGetter() {
     LoadingComponent,
   ],
   entryComponents: [ModalComponent, NotificationMessageComponent],
-  providers: [StompWebSocketService, RequestService, JwtService],
+  providers: [RequestService, JwtService],
 })
 export class InsiteKitModule {
   static forRoot(environment: any): ModuleWithProviders<InsiteKitModule> {
     return {
       ngModule: InsiteKitModule,
       providers: [
-        StompWebSocketService,
         {
           provide: 'env',
           useValue: environment,

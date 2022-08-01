@@ -8,12 +8,8 @@
     "strict": false,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
-    "paths": {
-      "insite-kit": [
-        "dist/insite-kit/insite-kit",
-        "dist/insite-kit"
-      ]
-    },
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "noImplicitReturns": false,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
@@ -22,6 +18,12 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "insite-kit": [
+        "dist/insite-kit/insite-kit",
+        "dist/insite-kit"
+      ]
+    },
     "target": "es2017",
     "module": "es2020",
     "lib": [
