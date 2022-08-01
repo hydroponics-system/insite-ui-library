@@ -19,7 +19,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16.14.0
-      - name: npm dependencies
+      - name: Install Library Dependencies
         run: npm install
       - name: Run Test
         run: npm run test:headless
+      - name: Publish Library
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN
+          npm run trypublish
