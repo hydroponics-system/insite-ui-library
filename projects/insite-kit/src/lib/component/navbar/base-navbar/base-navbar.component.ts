@@ -8,9 +8,10 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { switchMap, takeUntil, tap } from 'rxjs/operators';
 import { Access, Feature, WebRole } from '../../../model/common.model';
+import { Notification } from '../../../model/notification.model';
 import { JwtService } from '../../../service/auth/jwt.service';
 import { NotificationMessageService } from '../../../service/subscription/notification/notification-message.service';
 import { NotificationService } from '../../../service/subscription/notification/notification.service';
@@ -51,7 +52,7 @@ export class BaseNavbarComponent implements OnInit, OnDestroy {
     this.destroy.next();
   }
 
-  getNotifications(params?: Map<string, string[]>) {
+  getNotifications(params?: Map<string, string[]>): Observable<Notification[]> {
     return this.notificationService.getNotifications(params);
   }
 
