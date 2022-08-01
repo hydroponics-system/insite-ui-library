@@ -1,0 +1,11 @@
+<nav class="app-navbar">
+  <div class="nav-icons__left" (click)="onMenuClick()">
+    <fa-icon [icon]="sideBarOpen ? closeIcon : menuIcon"></fa-icon>
+  </div>
+
+  <div class="app-title inline-block">{{ appName }}</div>
+  <div class="nav-icons__right" (click)="onProfileClick()">
+    <fa-icon [icon]="profileIcon" (click)="onProfileClick()"></fa-icon>
+  </div>
+  <fa-icon class="nav-icons__right" [icon]="notificationBellIcon"></fa-icon>
+</nav>
