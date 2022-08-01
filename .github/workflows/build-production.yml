@@ -21,10 +21,10 @@ jobs:
           node-version: 16.14.0
       - name: Install Library Dependencies
         run: npm install
-      - name: Run Build
-        run: npm run build
       - name: Run Test
         run: npm run test:headless
+      - name: Run Build
+        run: npm run build
       - name: Publish Library
         run: |
           npm config set //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN
