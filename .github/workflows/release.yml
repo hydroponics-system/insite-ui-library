@@ -11,11 +11,17 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Get Library Version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@main
+        with:
+          path: ./projects/insite-kit/package.json
       - name: Create Tag and Release
         id: versionBump
-        uses: hydroponics-system/version-release@v1.5.1
+        uses: hydroponics-system/version-release@v1.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          version: ${{ steps.package-version.outputs.current-version}}
       - name: Publish Release
         id: create_release
         uses: actions/create-release@v1
