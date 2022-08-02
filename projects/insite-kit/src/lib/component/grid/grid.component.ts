@@ -1,5 +1,6 @@
 import {
   AfterViewInit,
+  ChangeDetectorRef,
   Component,
   ContentChild,
   ContentChildren,
@@ -46,10 +47,14 @@ export class GridComponent implements OnChanges, OnDestroy, AfterViewInit {
   destroy = new Subject<void>();
   initialLoadComplete = false;
 
-  constructor(private readonly router: Router) {}
+  constructor(
+    private readonly router: Router,
+    private changeDector: ChangeDetectorRef
+  ) {}
 
   ngAfterViewInit() {
     this.checkDataLoader();
+    this.changeDector.detectChanges();
     this.initialLoadComplete = true;
   }
 

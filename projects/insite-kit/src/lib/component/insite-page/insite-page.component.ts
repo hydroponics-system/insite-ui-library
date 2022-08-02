@@ -10,9 +10,9 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
   selector: 'ik-insite-page',
-  templateUrl: 'app-page.component.html',
+  templateUrl: 'insite-page.component.html',
 })
-export class AppPageComponent {
+export class InsitePageComponent {
   @ViewChild('sidebarNav') sideBar: SidebarComponent;
   @Input() appName: string;
 

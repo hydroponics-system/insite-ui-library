@@ -8,17 +8,16 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "build:sass": "sass styles/styles.scss projects/insite-kit/assets/styles.css",
+    "build": "npm run build:sass & ng build",
     "test": "ng test --code-coverage --source-map=false",
     "test:watch": "ng test --code-coverage --source-map=false --watch",
     "test:sourcemaps": "ng test --code-coverage --source-map=true",
     "test:sourcemaps:watch": "ng test --code-coverage --source-map=true --watch",
     "test:headless": "ng test --watch=false --code-coverage --source-map=true --browsers=ChromeHeadless",
-    "build:sass": "sass styles/styles.scss projects/insite-kit/assets/styles.css",
-    "build": "npm run build:sass & ng build",
     "version:patch": "cd projects/insite-kit & npm version patch",
     "version:minor": "cd projects/insite-kit & npm version minor",
-    "version:major": "cd projects/insite-kit & npm version major",
-    "release": "cd dist/insite-kit & npm publish"
+    "version:major": "cd projects/insite-kit & npm version major"
   },
   "dependencies": {
     "@angular/animations": "~14.1.0",

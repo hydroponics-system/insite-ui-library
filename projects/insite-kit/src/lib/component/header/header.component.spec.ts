@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { InsiteTestBed } from '../../test/insite-test-bed';
 import { setupTests } from '../../test/test-setup';
-import { LoadingComponent } from './loading.component';
+import { HeaderComponent } from './header.component';
 
-describe('LoadingComponent', () => {
-  let component: LoadingComponent;
-  let fixture: ComponentFixture<LoadingComponent>;
+describe('HeaderComponent', () => {
+  let component: HeaderComponent;
+  let fixture: ComponentFixture<HeaderComponent>;
 
   setupTests(async () => InsiteTestBed.setup());
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoadingComponent);
+    fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
 
     fixture.detectChanges();

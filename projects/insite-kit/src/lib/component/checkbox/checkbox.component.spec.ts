@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { InsiteTestBed } from '../../test/insite-test-bed';
 import { setupTests } from '../../test/test-setup';
-import { LoadingComponent } from './loading.component';
+import { CheckboxComponent } from './checkbox.component';
 
-describe('LoadingComponent', () => {
-  let component: LoadingComponent;
-  let fixture: ComponentFixture<LoadingComponent>;
+describe('CheckboxComponent', () => {
+  let component: CheckboxComponent;
+  let fixture: ComponentFixture<CheckboxComponent>;
 
   setupTests(async () => InsiteTestBed.setup());
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoadingComponent);
+    fixture = TestBed.createComponent(CheckboxComponent);
     component = fixture.componentInstance;
 
     fixture.detectChanges();

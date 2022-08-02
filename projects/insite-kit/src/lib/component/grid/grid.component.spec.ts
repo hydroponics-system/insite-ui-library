@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { InsiteTestBed } from '../../test/insite-test-bed';
 import { setupTests } from '../../test/test-setup';
-import { LoadingComponent } from './loading.component';
+import { GridComponent } from './grid.component';
 
-describe('LoadingComponent', () => {
-  let component: LoadingComponent;
-  let fixture: ComponentFixture<LoadingComponent>;
+describe('GridComponent', () => {
+  let component: GridComponent;
+  let fixture: ComponentFixture<GridComponent>;
 
   setupTests(async () => InsiteTestBed.setup());
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoadingComponent);
+    fixture = TestBed.createComponent(GridComponent);
     component = fixture.componentInstance;
 
     fixture.detectChanges();

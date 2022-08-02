@@ -16,14 +16,14 @@ import {
 import { JwtService } from '../../../service/auth/jwt.service';
 import { NotificationMessageService } from '../../../service/subscription/notification/notification-message.service';
 import { NotificationService } from '../../../service/subscription/notification/notification.service';
-import { StompWebSocketService } from '../../../service/subscription/subscription.service';
+import { SubscriptionService } from '../../../service/subscription/subscription.service';
 
 import { BaseNavbarComponent } from '../base-navbar/base-navbar.component';
 @Component({
   selector: 'ik-navbar',
-  templateUrl: 'app-navbar.component.html',
+  templateUrl: 'navbar.component.html',
 })
-export class AppNavbarComponent extends BaseNavbarComponent {
+export class NavbarComponent extends BaseNavbarComponent {
   @Input() appName: string;
   @Input() sideBarOpen: boolean = false;
   @Output() menuClick = new EventEmitter<any>();
@@ -37,7 +37,7 @@ export class AppNavbarComponent extends BaseNavbarComponent {
     router: Router,
     notificationService: NotificationService,
     jwt: JwtService,
-    stompService: StompWebSocketService,
+    subscriptionService: SubscriptionService,
     notificationMessageService: NotificationMessageService,
     @Inject(ViewContainerRef) viewContainerRef
   ) {
@@ -45,7 +45,7 @@ export class AppNavbarComponent extends BaseNavbarComponent {
       router,
       notificationService,
       jwt,
-      stompService,
+      subscriptionService,
       notificationMessageService,
       viewContainerRef
     );
@@ -60,12 +60,11 @@ export class AppNavbarComponent extends BaseNavbarComponent {
   }
 
   onProfileClick() {
-    // this.router.navigate(['/profile']);
     this.jwt.logOut();
   }
 
   onLogOutClick() {
     this.jwt.logOut();
-    this.stompService.deactivate();
+    this.subscriptionService.deactivate();
   }
 }

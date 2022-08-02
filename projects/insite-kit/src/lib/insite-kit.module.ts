@@ -1,18 +1,17 @@
 import { CommonModule } from '@angular/common';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToastrModule } from 'ngx-toastr';
-import { AppPageComponent } from './component/app-page/app-page.component';
 import { BannerComponent } from './component/banner/banner.component';
 import { CardHeaderComponent } from './component/card/card-header/card-header.component';
 import { CardInfoComponent } from './component/card/card-info/card-info.component';
 import { CardComponent } from './component/card/card.component';
 import { CheckboxComponent } from './component/checkbox/checkbox.component';
-import { AppFooterComponent } from './component/footer/app-footer.component';
+import { FooterComponent } from './component/footer/footer.component';
 import { ContactAdminModalComponent } from './component/footer/modals/contact-admin-modal/contact-admin-modal.component';
 import { PrivacyPolicyModalComponent } from './component/footer/modals/privacy-policy-modal/privacy-policy-modal.component';
 import { ProjectModalComponent } from './component/footer/modals/project-modal/project-modal.component';
@@ -24,13 +23,14 @@ import { GridComponent } from './component/grid/grid.component';
 import { HeaderBackComponent } from './component/header/header-back/header-back.component';
 import { HeaderComponent } from './component/header/header.component';
 import { IconComponent } from './component/icon/icon.component';
+import { InsitePageComponent } from './component/insite-page/insite-page.component';
 import { LoadingComponent } from './component/loading/loading.component';
 import { ModalActionBarComponent } from './component/modal/modal-action-bar/modal-action-bar.component';
 import { ModalBodyComponent } from './component/modal/modal-body/modal-body.component';
 import { ModalHeaderComponent } from './component/modal/modal-header/modal-header.component';
 import { ModalComponent } from './component/modal/modal.component';
-import { AppNavbarComponent } from './component/navbar/app-navbar/app-navbar.component';
 import { BaseNavbarComponent } from './component/navbar/base-navbar/base-navbar.component';
+import { NavbarComponent } from './component/navbar/navbar/navbar.component';
 import { NotificationMessageComponent } from './component/notification-message/notification-message.component';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { BasicHttpInterceptorService } from './service/interceptor/http-interceptor.service';
@@ -49,10 +49,10 @@ export function tokenGetter() {
     UsernamePipe,
     NotificationMessagePipe,
     WebRoleTranslationPipe,
-    AppNavbarComponent,
+    NavbarComponent,
     BaseNavbarComponent,
     SidebarComponent,
-    AppPageComponent,
+    InsitePageComponent,
     ContactAdminModalComponent,
     PrivacyPolicyModalComponent,
     ProjectModalComponent,
@@ -60,7 +60,7 @@ export function tokenGetter() {
     ModalBodyComponent,
     ModalHeaderComponent,
     ModalComponent,
-    AppFooterComponent,
+    FooterComponent,
     LoadingComponent,
     BannerComponent,
     CardHeaderComponent,
@@ -78,6 +78,7 @@ export function tokenGetter() {
   imports: [
     CommonModule,
     RouterModule.forRoot([]),
+    HttpClientModule,
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
@@ -96,10 +97,10 @@ export function tokenGetter() {
     UsernamePipe,
     NotificationMessagePipe,
     WebRoleTranslationPipe,
-    AppNavbarComponent,
+    NavbarComponent,
     BaseNavbarComponent,
     SidebarComponent,
-    AppPageComponent,
+    InsitePageComponent,
     ContactAdminModalComponent,
     PrivacyPolicyModalComponent,
     ProjectModalComponent,
@@ -107,7 +108,7 @@ export function tokenGetter() {
     ModalBodyComponent,
     ModalHeaderComponent,
     ModalComponent,
-    AppFooterComponent,
+    FooterComponent,
     LoadingComponent,
     BannerComponent,
     CardHeaderComponent,
@@ -123,6 +124,7 @@ export function tokenGetter() {
     HeaderComponent,
   ],
   entryComponents: [ModalComponent, NotificationMessageComponent],
+  providers: [UsernamePipe, NotificationMessagePipe, WebRoleTranslationPipe],
 })
 export class InsiteKitModule {
   static forRoot(environment: any): ModuleWithProviders<InsiteKitModule> {

@@ -12,7 +12,7 @@ import { STOMP_SOCKET_CONFIG } from './stomp.config';
 @Injectable({
   providedIn: 'root',
 })
-export class StompWebSocketService extends RxStomp {
+export class SubscriptionService extends RxStomp {
   private readonly SOCKET_URL = '/topic/notification';
 
   activeUser: User;

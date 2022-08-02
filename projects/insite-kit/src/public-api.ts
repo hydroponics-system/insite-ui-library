@@ -2,13 +2,12 @@
  * Public API Surface of insite-kit
  */
 
-export * from './lib/component/app-page/app-page.component';
 export * from './lib/component/banner/banner.component';
 export * from './lib/component/card/card-header/card-header.component';
 export * from './lib/component/card/card-info/card-info.component';
 export * from './lib/component/card/card.component';
 export * from './lib/component/checkbox/checkbox.component';
-export * from './lib/component/footer/app-footer.component';
+export * from './lib/component/footer/footer.component';
 export * from './lib/component/footer/modals/contact-admin-modal/contact-admin-modal.component';
 export * from './lib/component/footer/modals/privacy-policy-modal/privacy-policy-modal.component';
 export * from './lib/component/footer/modals/project-modal/project-modal.component';
@@ -20,13 +19,14 @@ export * from './lib/component/grid/grid.component';
 export * from './lib/component/header/header-back/header-back.component';
 export * from './lib/component/header/header.component';
 export * from './lib/component/icon/icon.component';
+export * from './lib/component/insite-page/insite-page.component';
 export * from './lib/component/loading/loading.component';
 export * from './lib/component/modal/modal-action-bar/modal-action-bar.component';
 export * from './lib/component/modal/modal-body/modal-body.component';
 export * from './lib/component/modal/modal-header/modal-header.component';
 export * from './lib/component/modal/modal.component';
-export * from './lib/component/navbar/app-navbar/app-navbar.component';
 export * from './lib/component/navbar/base-navbar/base-navbar.component';
+export * from './lib/component/navbar/navbar/navbar.component';
 export * from './lib/component/notification-message/notification-message.component';
 export * from './lib/component/sidebar/sidebar.component';
 export * from './lib/insite-kit.module';

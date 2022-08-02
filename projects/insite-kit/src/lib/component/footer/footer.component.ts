@@ -2,6 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'ik-footer',
-  templateUrl: 'app-footer.component.html',
+  templateUrl: 'footer.component.html',
 })
-export class AppFooterComponent {}
+export class FooterComponent {}

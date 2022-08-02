@@ -15,7 +15,7 @@ import { Notification } from '../../../model/notification.model';
 import { JwtService } from '../../../service/auth/jwt.service';
 import { NotificationMessageService } from '../../../service/subscription/notification/notification-message.service';
 import { NotificationService } from '../../../service/subscription/notification/notification.service';
-import { StompWebSocketService } from '../../../service/subscription/subscription.service';
+import { SubscriptionService } from '../../../service/subscription/subscription.service';
 import { SidebarComponent } from '../../sidebar/sidebar.component';
 @Component({
   selector: 'ik-base-navbar',
@@ -35,7 +35,7 @@ export class BaseNavbarComponent implements OnInit, OnDestroy {
     protected readonly router: Router,
     protected readonly notificationService: NotificationService,
     protected readonly jwt: JwtService,
-    protected readonly stompService: StompWebSocketService,
+    protected readonly subscriptionService: SubscriptionService,
     protected readonly notificationMessageService: NotificationMessageService,
     @Inject(ViewContainerRef) viewContainerRef
   ) {
@@ -43,7 +43,7 @@ export class BaseNavbarComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.stompService.init();
+    this.subscriptionService.init();
     this.notificationUpdates();
     this.listenToWebSocket();
   }
@@ -67,7 +67,7 @@ export class BaseNavbarComponent implements OnInit, OnDestroy {
   }
 
   listenToWebSocket() {
-    return this.stompService
+    return this.subscriptionService
       .listen()
       .pipe(
         tap((res) => this.notificationMessageService.triggerNotification(res)),
