@@ -1,6 +1,10 @@
 {
   "name": "insite-kit",
-  "version": "2.1.0",
+  "version": "2.1.1",
+  "description": "External UI Library for development with Hydroponics UI.",
+  "main": "index.js",
+  "author": "Sam Butler",
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^14.1.0",
     "@angular/core": "^14.1.0",
