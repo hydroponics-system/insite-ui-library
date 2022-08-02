@@ -18,7 +18,7 @@ jobs:
           path: ./projects/insite-kit
       - name: Create Tag and Release
         id: versionBump
-        uses: hydroponics-system/version-release@v1.6.0
+        uses: hydroponics-system/version-release@v1.6.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           version: ${{ steps.package-version.outputs.current-version}}
