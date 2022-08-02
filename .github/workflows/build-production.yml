@@ -23,3 +23,7 @@ jobs:
         run: npm install
       - name: Run Test
         run: npm run test:headless
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
+          package: ./dist/insite-kit/
