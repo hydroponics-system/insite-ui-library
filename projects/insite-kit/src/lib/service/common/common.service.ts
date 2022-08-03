@@ -4,11 +4,23 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class CommonService {
-  copyObject(obj: any) {
+  /**
+   * Will return the copied object of it's own instance.
+   *
+   * @param obj The object to be copied
+   * @returns new object instance
+   */
+  copyObject(obj: any): any {
     return JSON.parse(JSON.stringify(obj));
   }
 
-  formatDate(value: Date | string) {
+  /**
+   * Formats the given date object or string. The default format being used is month/day/year.
+   *
+   * @param value The value to be formatted.
+   * @returns The formatted string.
+   */
+  formatDate(value: Date | string): string {
     if (value === null) {
       return '-';
     }
@@ -32,15 +44,17 @@ export class CommonService {
     return `${month}/${day}/${year}`;
   }
 
-  getFormattedName(user: any) {
+  /**
+   * Formats the users name into a first name and last name basis.
+   *
+   * @param user The user object to be formatted.
+   * @returns String of the formatted name.
+   */
+  getFormattedName(user: any): string {
     if (user.lastName) {
       return `${user.firstName} ${user.lastName}`.trim();
     } else {
       return `${user.firstName}`.trim();
     }
-  }
-
-  convertStringToDate(d: string): Date {
-    return new Date(d.replace(/-/g, '/'));
   }
 }

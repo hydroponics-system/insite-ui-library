@@ -36,7 +36,6 @@ import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { BasicHttpInterceptorService } from './service/interceptor/http-interceptor.service';
 import { UsernamePipe } from './service/pipe/format-user-name.pipe';
 import { NotificationMessagePipe } from './service/pipe/notification-message.pipe';
-import { WebRoleTranslationPipe } from './service/pipe/web-role-translation.pipe';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -48,7 +47,6 @@ export function tokenGetter() {
     IconComponent,
     UsernamePipe,
     NotificationMessagePipe,
-    WebRoleTranslationPipe,
     NavbarComponent,
     BaseNavbarComponent,
     SidebarComponent,
@@ -96,7 +94,6 @@ export function tokenGetter() {
     IconComponent,
     UsernamePipe,
     NotificationMessagePipe,
-    WebRoleTranslationPipe,
     NavbarComponent,
     BaseNavbarComponent,
     SidebarComponent,
@@ -124,7 +121,7 @@ export function tokenGetter() {
     HeaderComponent,
   ],
   entryComponents: [ModalComponent, NotificationMessageComponent],
-  providers: [UsernamePipe, NotificationMessagePipe, WebRoleTranslationPipe],
+  providers: [UsernamePipe, NotificationMessagePipe],
 })
 export class InsiteKitModule {
   static forRoot(environment: any): ModuleWithProviders<InsiteKitModule> {
