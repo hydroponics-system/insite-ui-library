@@ -32,10 +32,10 @@ describe('CommonService', () => {
   });
 
   it('should format the date', () => {
-    let dateObj = new Date(500000000000);
+    let dateObj = new Date('1968-11-16T00:00:00');
     let dateString = '1968-11-16T00:00:00';
 
-    expect(service.formatDate(dateObj)).toEqual('11/04/1985');
+    expect(service.formatDate(dateObj)).toEqual('11/16/1968');
     expect(service.formatDate(dateString)).toEqual('11/16/1968');
   });
 
