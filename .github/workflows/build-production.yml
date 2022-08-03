@@ -12,7 +12,6 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-
     steps:
       - uses: actions/checkout@v3
       - name: Install Node
@@ -23,10 +22,3 @@ jobs:
         run: npm install
       - name: Run Test
         run: npm run test:headless
-      - name: Run Build
-        run: npm run build
-      - name: Publish Package
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_AUTH_TOKEN }}
-          package: ./dist/insite-kit/package.json

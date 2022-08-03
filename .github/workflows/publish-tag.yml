@@ -1,7 +1,7 @@
-name: Release Version
+name: Publish Tag
 on:
   workflow_run:
-    workflows: ["Build Production"]
+    workflows: ["Release Library"]
     types: [completed]
 
 jobs:
