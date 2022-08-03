@@ -69,7 +69,7 @@ export class JwtService {
    *
    * @returns The user's id.
    */
-  getRequiredUserId() {
+  getUserId() {
     return Number(this.get('userId'));
   }
 
@@ -78,17 +78,17 @@ export class JwtService {
    *
    * @returns The user's webrole.
    */
-  getRequiredWebRole() {
+  getWebRole() {
     return this.get('webRole') as keyof typeof WebRole;
   }
 
   getUser(): User {
     return {
-      id: this.getRequiredUserId(),
+      id: this.getUserId(),
       firstName: this.get('firstName'),
       lastName: this.get('lastName'),
       email: this.get('email'),
-      webRole: this.getRequiredWebRole(),
+      webRole: this.getWebRole(),
     };
   }
 
