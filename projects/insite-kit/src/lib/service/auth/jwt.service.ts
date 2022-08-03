@@ -46,6 +46,8 @@ export class JwtService {
         return false;
       }
       return true;
+    } else {
+      return false;
     }
   }
 

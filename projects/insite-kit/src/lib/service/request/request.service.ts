@@ -72,7 +72,7 @@ export class RequestService {
   }
 
   /**
-   * Perform a download on the called endpoint.
+   * Gets the download body as a blob on the given endpoint.
    *
    * @param url to call.
    * @param params params to add to endpoint.

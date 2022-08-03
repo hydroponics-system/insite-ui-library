@@ -7,9 +7,6 @@ import { JwtService } from './jwt.service';
 })
 export class AuthGuard implements CanActivate {
   constructor(private router: Router, private jwt: JwtService) {}
-  canActivate(next: ActivatedRouteSnapshot): boolean {
-    return this.validToken(next) && this.hasAppAccess(next);
-  }
 
   /**
    * Determine if the current user JWT token is valid. If the token is invalid or expired
@@ -18,7 +15,7 @@ export class AuthGuard implements CanActivate {
    * @param next snapshot of the active route
    * @returns boolean based on the status of the token
    */
-  validToken(next: ActivatedRouteSnapshot): boolean {
+  canActivate(next: ActivatedRouteSnapshot): boolean {
     if (!this.jwt.isAuthenticated()) {
       if (next.routeConfig.path !== 'login') {
         this.router.navigate(['/login']);
@@ -29,22 +26,5 @@ export class AuthGuard implements CanActivate {
       return false;
     }
     return true;
-  }
-
-  /**
-   * Determine if the user has application access.
-   *
-   * @param next snapshot of the active route
-   * @returns boolean based on the status of the token
-   */
-  hasAppAccess(next: ActivatedRouteSnapshot): boolean {
-    if (['login', 'home', 'profile'].includes(next.routeConfig.path))
-      return true;
-
-    const appAccess = this.jwt
-      .get('apps')
-      .filter((path) => path.includes(next.routeConfig.path));
-
-    return appAccess.length > 0;
   }
 }

@@ -10,7 +10,7 @@ This project contains the insite-kit library. The main purpose of this library i
 - **AOT/JIT** compatible library build via [Angular Compiler](https://www.npmjs.com/package/@angular/compiler-cli) (ngc).
 - **Deployment** with [Heroku](https://devcenter.heroku.com/categories/reference).
 - **Testing** with [Karma](https://karma-runner.github.io/1.0/index.html) and [Jasmine](https://jasmine.github.io/).
-- **Test coverage** report via [Karma Coverage](<[https://github.com/gotwarlost/istanbul](https://karma-runner.github.io/1.0/index.html)>).
+- **Test coverage** report via [Karma Coverage](https://karma-runner.github.io/1.0/index.html).
 - **Watch modes** for building and testing procedures that makes developing process easier.
 - **Linting** with [TSLint](https://palantir.github.io/tslint/) and [Codelyzer](https://github.com/mgechev/codelyzer) for static code analysis.
 
