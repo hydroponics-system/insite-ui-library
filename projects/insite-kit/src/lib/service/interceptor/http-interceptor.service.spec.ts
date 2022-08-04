@@ -6,18 +6,12 @@ import { InisteTestData } from '../../test/test-data';
 import { setupTests } from '../../test/test-setup';
 import { BasicHttpInterceptorService } from './http-interceptor.service';
 
-fdescribe('BasicHttpInterceptorService', () => {
+describe('BasicHttpInterceptorService', () => {
   let service: BasicHttpInterceptorService;
-  let handler: HttpHandler;
 
   setupTests(async () => InsiteTestBed.setup());
 
-  beforeEach(() => {
-    service = TestBed.inject(BasicHttpInterceptorService);
-    handler = TestBed.inject(HttpHandler);
-
-    spyOn(handler, 'handle');
-  });
+  beforeEach(() => (service = TestBed.inject(BasicHttpInterceptorService)));
 
   it('should create service', () => {
     expect(service).toBeTruthy();
