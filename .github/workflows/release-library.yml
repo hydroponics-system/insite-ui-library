@@ -16,6 +16,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16.14.0
+      - name: Install Library Dependencies
+        run: npm install
       - name: Run Build
         run: npm run build
       - name: Publish Package
