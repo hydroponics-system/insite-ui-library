@@ -43,7 +43,6 @@ export * from './lib/service/auth/jwt.service';
 export * from './lib/service/common/common.service';
 export * from './lib/service/interceptor/http-interceptor.service';
 export * from './lib/service/pipe/format-user-name.pipe';
-export * from './lib/service/pipe/notification-message.pipe';
 export * from './lib/service/request/request.service';
 export * from './lib/service/subscription/notification/notification-message.service';
 export * from './lib/service/subscription/notification/notification.service';

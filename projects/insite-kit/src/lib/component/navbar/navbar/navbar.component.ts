@@ -1,11 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Inject,
-  Input,
-  Output,
-  ViewContainerRef,
-} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   faBars,
@@ -38,16 +31,14 @@ export class NavbarComponent extends BaseNavbarComponent {
     notificationService: NotificationService,
     jwt: JwtService,
     subscriptionService: SubscriptionService,
-    notificationMessageService: NotificationMessageService,
-    @Inject(ViewContainerRef) viewContainerRef
+    notificationMessageService: NotificationMessageService
   ) {
     super(
       router,
       notificationService,
       jwt,
       subscriptionService,
-      notificationMessageService,
-      viewContainerRef
+      notificationMessageService
     );
   }
 

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -35,7 +36,6 @@ import { NotificationMessageComponent } from './component/notification-message/n
 import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { BasicHttpInterceptorService } from './service/interceptor/http-interceptor.service';
 import { UsernamePipe } from './service/pipe/format-user-name.pipe';
-import { NotificationMessagePipe } from './service/pipe/notification-message.pipe';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -46,7 +46,6 @@ export function tokenGetter() {
     NotificationMessageComponent,
     IconComponent,
     UsernamePipe,
-    NotificationMessagePipe,
     NavbarComponent,
     BaseNavbarComponent,
     SidebarComponent,
@@ -75,6 +74,7 @@ export function tokenGetter() {
   ],
   imports: [
     CommonModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([]),
     HttpClientModule,
     FontAwesomeModule,
@@ -93,7 +93,6 @@ export function tokenGetter() {
     NotificationMessageComponent,
     IconComponent,
     UsernamePipe,
-    NotificationMessagePipe,
     NavbarComponent,
     BaseNavbarComponent,
     SidebarComponent,
@@ -121,7 +120,7 @@ export function tokenGetter() {
     HeaderComponent,
   ],
   entryComponents: [ModalComponent, NotificationMessageComponent],
-  providers: [UsernamePipe, NotificationMessagePipe],
+  providers: [UsernamePipe],
 })
 export class InsiteKitModule {
   static forRoot(environment: any): ModuleWithProviders<InsiteKitModule> {

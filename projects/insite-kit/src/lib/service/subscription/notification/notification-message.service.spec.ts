@@ -3,7 +3,7 @@ import { InsiteTestBed } from '../../../test/insite-test-bed';
 import { setupTests } from '../../../test/test-setup';
 import { NotificationMessageService } from './notification-message.service';
 
-fdescribe('NotificationMessageService', () => {
+describe('NotificationMessageService', () => {
   let service: NotificationMessageService;
 
   setupTests(async () => InsiteTestBed.setup());

@@ -1,39 +1,21 @@
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { Notification } from '../../model/notification.model';
+import { Toast, ToastPackage, ToastrService } from 'ngx-toastr';
+import { NOTIFICATION_ANIMATION } from './animation.component';
 
 @Component({
-  selector: 'ik-notification-message',
+  selector: '[ik-notification-message]',
   templateUrl: 'notification-message.component.html',
-  animations: [
-    trigger('fadeInOut', [
-      state('in', style({ opacity: 1 })),
-      transition(':leave', animate(600, style({ opacity: 0 }))),
-    ]),
-  ],
+  animations: [NOTIFICATION_ANIMATION],
+  preserveWhitespaces: false,
 })
-export class NotificationMessageComponent {
-  notifications: Notification[] = [];
-  notificationTimeout = 3500;
-  num = 0;
-
-  constructor(private readonly router: Router) {}
-
-  onNotificationRouteClick(notification: Notification) {
-    this.router.navigate([`/notification/details/${notification.id}`]);
+export class NotificationMessageComponent extends Toast {
+  constructor(toastrService: ToastrService, toastPackage: ToastPackage) {
+    super(toastrService, toastPackage);
   }
 
-  addNotification(n: Notification) {
-    this.notifications = [...this.notifications, n];
-    setTimeout(() => {
-      this.notifications = this.notifications.filter((m) => m.id !== n.id);
-    }, this.notificationTimeout);
+  action(event: Event) {
+    event.stopPropagation();
+    this.toastPackage.triggerAction();
+    return false;
   }
 }

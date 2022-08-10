@@ -1,14 +1,35 @@
-<div
-  [@fadeInOut]="'in'"
-  *ngFor="let notification of notifications"
-  class="notification-card"
-  (click)="onNotificationRouteClick(notification)"
->
-  <div class="notification-overall">
-    <ik-icon class="notification-icon" icon="notification"></ik-icon>
-    <div class="notification-content">
-      <span class="title">{{ notification | formatNotitication }}</span>
-      <span class="message">Just Now</span>
+<div class="toaster">
+  <div class="toast-icon" [class]="options.toastClass">
+    <ik-icon icon="notification"></ik-icon>
+  </div>
+  <div class="toast-details">
+    <div>
+      <div
+        *ngIf="title"
+        [class]="options.titleClass"
+        [attr.aria-label]="title"
+        class="custom-title"
+      >
+        {{ title }}
+      </div>
+      <div
+        *ngIf="message && options.enableHtml"
+        role="alert"
+        aria-live="polite"
+        class="custom-message"
+        [class]="options.messageClass"
+        [innerHTML]="message"
+      ></div>
+      <div
+        *ngIf="message && !options.enableHtml"
+        role="alert"
+        aria-live="polite"
+        class="custom-message"
+        [class]="options.messageClass"
+        [attr.aria-label]="message"
+      >
+        {{ message }}
+      </div>
     </div>
   </div>
 </div>
