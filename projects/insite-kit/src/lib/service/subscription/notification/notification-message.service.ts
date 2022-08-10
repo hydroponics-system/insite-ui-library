@@ -26,8 +26,7 @@ export class NotificationMessageService {
   private pushNotification(title: string, body: string) {
     const override: Partial<IndividualConfig> = {
       toastComponent: NotificationMessageComponent,
-      disableTimeOut: false,
-      timeOut: 5000,
+      disableTimeOut: true,
       tapToDismiss: true,
       positionClass: 'toast-top-right',
       toastClass: 'toast-icon',
