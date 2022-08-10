@@ -1,11 +1,4 @@
-import {
-  Component,
-  Inject,
-  Input,
-  ViewChild,
-  ViewContainerRef,
-} from '@angular/core';
-import { NotificationMessageService } from '../../service/subscription/notification/notification-message.service';
+import { Component, Input, ViewChild } from '@angular/core';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
@@ -15,11 +8,4 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 export class InsitePageComponent {
   @ViewChild('sidebarNav') sideBar: SidebarComponent;
   @Input() appName: string;
-
-  constructor(
-    @Inject(NotificationMessageService) notificationMessageService,
-    @Inject(ViewContainerRef) viewContainerRef
-  ) {
-    notificationMessageService.setRootViewContainerRef(viewContainerRef);
-  }
 }
