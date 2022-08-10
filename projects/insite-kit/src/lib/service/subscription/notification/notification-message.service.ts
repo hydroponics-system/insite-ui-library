@@ -1,5 +1,9 @@
-import { Injectable } from '@angular/core';
-import { IndividualConfig, ToastrService } from 'ngx-toastr';
+import { Injectable, ViewChild } from '@angular/core';
+import {
+  IndividualConfig,
+  ToastContainerDirective,
+  ToastrService,
+} from 'ngx-toastr';
 import { NotificationMessageComponent } from '../../../component/notification-message/notification-message.component';
 import {
   Notification,
@@ -10,7 +14,12 @@ import {
   providedIn: 'root',
 })
 export class NotificationMessageService {
-  constructor(private readonly toastService: ToastrService) {}
+  @ViewChild(ToastContainerDirective, { static: true })
+  toastContainer: ToastContainerDirective;
+
+  constructor(private readonly toastService: ToastrService) {
+    this.toastService.overlayContainer = this.toastContainer;
+  }
 
   public show(notification: Notification) {
     this.pushNotification(
