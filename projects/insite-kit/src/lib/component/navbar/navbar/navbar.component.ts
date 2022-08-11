@@ -14,8 +14,8 @@ import {
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { JwtService } from '../../../service/auth/jwt.service';
-import { NotificationMessageService } from '../../../service/subscription/notification/notification-message.service';
 import { NotificationService } from '../../../service/subscription/notification/notification.service';
+import { PopupService } from '../../../service/subscription/notification/popup.service';
 import { SubscriptionService } from '../../../service/subscription/subscription.service';
 
 import { BaseNavbarComponent } from '../base-navbar/base-navbar.component';
@@ -38,7 +38,7 @@ export class NavbarComponent extends BaseNavbarComponent {
     notificationService: NotificationService,
     jwt: JwtService,
     subscriptionService: SubscriptionService,
-    notificationMessageService: NotificationMessageService,
+    popupService: PopupService,
     @Inject(ViewContainerRef) viewContainerRef
   ) {
     super(
@@ -46,7 +46,7 @@ export class NavbarComponent extends BaseNavbarComponent {
       notificationService,
       jwt,
       subscriptionService,
-      notificationMessageService,
+      popupService,
       viewContainerRef
     );
   }

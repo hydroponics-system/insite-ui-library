@@ -9,6 +9,13 @@ import { JwtService } from '../auth/jwt.service';
 import { UrlService } from '../url-service/url.service';
 import { STOMP_SOCKET_CONFIG } from './stomp.config';
 
+/**
+ * Subscription service for listening to a socket and processing
+ * the notification that is passed in.
+ *
+ * @author Sam Butler
+ * @since August 11, 2022
+ */
 @Injectable({
   providedIn: 'root',
 })
@@ -24,6 +31,9 @@ export class SubscriptionService extends RxStomp {
     super();
   }
 
+  /**
+   * Initialize the socket connection.
+   */
   init() {
     if (!this.active) {
       this.configure(STOMP_SOCKET_CONFIG);

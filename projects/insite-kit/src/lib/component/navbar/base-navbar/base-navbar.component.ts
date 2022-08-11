@@ -13,8 +13,8 @@ import { switchMap, takeUntil, tap } from 'rxjs/operators';
 import { Access, Feature, WebRole } from '../../../model/common.model';
 import { Notification } from '../../../model/notification.model';
 import { JwtService } from '../../../service/auth/jwt.service';
-import { NotificationMessageService } from '../../../service/subscription/notification/notification-message.service';
 import { NotificationService } from '../../../service/subscription/notification/notification.service';
+import { PopupService } from '../../../service/subscription/notification/popup.service';
 import { SubscriptionService } from '../../../service/subscription/subscription.service';
 import { SidebarComponent } from '../../sidebar/sidebar.component';
 @Component({
@@ -36,10 +36,10 @@ export class BaseNavbarComponent implements OnInit, OnDestroy {
     protected readonly notificationService: NotificationService,
     protected readonly jwt: JwtService,
     protected readonly subscriptionService: SubscriptionService,
-    protected readonly notificationMessageService: NotificationMessageService,
+    protected readonly popupService: PopupService,
     @Inject(ViewContainerRef) viewContainerRef
   ) {
-    notificationMessageService.setRootViewContainerRef(viewContainerRef);
+    popupService.overlayContainer(viewContainerRef);
   }
 
   ngOnInit() {
@@ -70,7 +70,7 @@ export class BaseNavbarComponent implements OnInit, OnDestroy {
     return this.subscriptionService
       .listen()
       .pipe(
-        tap((res) => this.notificationMessageService.triggerNotification(res)),
+        tap((res) => this.popupService.show(res)),
         tap(() => this.notificationService.triggerNotificationUpdate()),
         takeUntil(this.destroy)
       )
