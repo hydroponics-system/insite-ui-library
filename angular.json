@@ -33,7 +33,22 @@
           }
         }
       }
+    },
+    "storybook": {
+      "projectType": "application",
+      "root": "stories",
+      "sourceRoot": "stories",
+      "architect": {
+        "build": {
+          "options": {
+            "tsConfig": "tsconfig.json",
+            "styles": [
+              "styles/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
-  },
-  "defaultProject": "insite-kit"
+  }
 }

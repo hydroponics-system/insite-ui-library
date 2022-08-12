@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { APP_BASE_HREF, CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -121,7 +121,11 @@ export function tokenGetter() {
     HeaderComponent,
   ],
   entryComponents: [ModalComponent, NotificationMessageComponent],
-  providers: [UsernamePipe, NotificationMessagePipe],
+  providers: [
+    UsernamePipe,
+    NotificationMessagePipe,
+    { provide: APP_BASE_HREF, useValue: '/' },
+  ],
 })
 export class InsiteKitModule {
   static forRoot(environment: any): ModuleWithProviders<InsiteKitModule> {
