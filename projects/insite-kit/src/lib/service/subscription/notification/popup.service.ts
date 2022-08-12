@@ -13,7 +13,7 @@ import { Notification } from '../../../model/notification.model';
   providedIn: 'root',
 })
 export class PopupService {
-  container: ComponentRef<NotificationMessageComponent>;
+  private container: ComponentRef<NotificationMessageComponent>;
 
   /**
    * Sets the overlay container the notification component instance will

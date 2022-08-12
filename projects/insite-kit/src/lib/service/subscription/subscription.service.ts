@@ -4,7 +4,6 @@ import { Message } from '@stomp/stompjs';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Notification } from '../../model/notification.model';
-import { User } from '../../model/user.model';
 import { JwtService } from '../auth/jwt.service';
 import { UrlService } from '../url-service/url.service';
 import { STOMP_SOCKET_CONFIG } from './stomp.config';
@@ -21,8 +20,6 @@ import { STOMP_SOCKET_CONFIG } from './stomp.config';
 })
 export class SubscriptionService extends RxStomp {
   private readonly SOCKET_URL = '/topic/notification';
-
-  activeUser: User;
 
   constructor(
     private readonly jwt: JwtService,
@@ -45,10 +42,10 @@ export class SubscriptionService extends RxStomp {
   }
 
   /**
-   * This will listen to the websocket url for any request and rely
-   * them to the logged in user.
+   * This will listen to the websocket url for any request and show it to the
+   * provided user.
    *
-   * @param user The user currently logged in
+   * @param destination What socket path to listen too.
    * @returns Observable of the caught Notification object.
    */
   listen(destination?: string): Observable<Notification> {

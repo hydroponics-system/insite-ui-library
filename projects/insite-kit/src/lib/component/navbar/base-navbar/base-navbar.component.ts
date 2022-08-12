@@ -71,7 +71,6 @@ export class BaseNavbarComponent implements OnInit, OnDestroy {
       .listen()
       .pipe(
         tap((res) => this.popupService.show(res)),
-        tap(() => this.notificationService.triggerNotificationUpdate()),
         takeUntil(this.destroy)
       )
       .subscribe();

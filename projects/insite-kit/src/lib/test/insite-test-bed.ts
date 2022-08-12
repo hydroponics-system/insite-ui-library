@@ -7,8 +7,6 @@ export class InsiteTestBed extends AbstractTestBed {
   static override getModuleMetaData(): TestModuleMetadata {
     return {
       imports: [InsiteKitModule.forRoot(environment)],
-      declarations: [],
-      providers: [],
     };
   }
 }
