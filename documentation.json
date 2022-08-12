@@ -3195,7 +3195,7 @@
         },
         {
             "name": "CardComponent",
-            "id": "component-CardComponent-dc543257f778e45c7ab560d730ceadcd340f9dafd9cd409e9f3e08e7ecf5e8bd7566061215ba6c60be0231f5affe1fe6067d84f40ca6c575ec566c2514387ce1",
+            "id": "component-CardComponent-1095d751633a91da6b9893b538c568e61dcdb40bf75ad7642f15d1b0938fc900ff2e9f723e3445edcbe6fbf4b5a3eb7e4990eb8bc0ecfe7c1ed4ff5f0b7f4b40",
             "file": "projects/insite-kit/src/lib/component/card/card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3215,7 +3215,7 @@
                     "defaultValue": "true",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 9,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -3224,16 +3224,8 @@
                     "defaultValue": "true",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 9,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "title",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "line": 8,
-                    "type": "string",
+                    "type": "boolean",
                     "decorators": []
                 }
             ],
@@ -3247,7 +3239,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'ik-card',\r\n  templateUrl: 'card.component.html',\r\n})\r\nexport class CardComponent {\r\n  @Input() title: string;\r\n  @Input() padding = true;\r\n  @Input() marginBottom = true;\r\n}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'ik-card',\r\n  templateUrl: 'card.component.html',\r\n})\r\nexport class CardComponent {\r\n  @Input() padding = true;\r\n  @Input() marginBottom = true;\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -3297,7 +3289,7 @@
         },
         {
             "name": "CardInfoComponent",
-            "id": "component-CardInfoComponent-b7955e263cd5dba8fa405f0966ea99bbfc0896a59f14bb7041455748439cf6a4a0708d4c39dff32767dd550c5b9ee350ef712c3d9900a588c8412808b2573eea",
+            "id": "component-CardInfoComponent-f73c78699dd855d02b7373c45b5ef9ba1b926fe3451167e6730d8cc5f5f522d5b00ac915570e28a7a068d2846bbbbbccbc0ed03420d632773f5ffb61e70d8dda",
             "file": "projects/insite-kit/src/lib/component/card/card-info/card-info.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3314,11 +3306,11 @@
             "inputsClass": [
                 {
                     "name": "contentColor",
-                    "defaultValue": "'text-default'",
+                    "defaultValue": "'DEFAULT'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 10,
-                    "type": "string",
+                    "type": "\"DEFAULT\" | \"DENIED\" | \"APPROVED\" | \"PENDING\"",
                     "decorators": []
                 },
                 {
@@ -3334,7 +3326,7 @@
                     "defaultValue": "true",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 12,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -3357,11 +3349,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'ik-card-info',\r\n  templateUrl: 'card-info.component.html',\r\n})\r\nexport class CardInfoComponent {\r\n  @Input() header: string;\r\n  @Input() text: string;\r\n  @Input() contentColor = 'text-default';\r\n  @Input() padding = true;\r\n}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'ik-card-info',\r\n  templateUrl: 'card-info.component.html',\r\n})\r\nexport class CardInfoComponent {\r\n  @Input() header: string;\r\n  @Input() text: string;\r\n  @Input() contentColor: 'DEFAULT' | 'DENIED' | 'APPROVED' | 'PENDING' =\r\n    'DEFAULT';\r\n  @Input() padding = true;\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "templateData": "<div class=\"content\" [ngClass]=\"{'padding-info': padding}\">\r\n  <div class=\"label-header\">{{ header }}</div>\r\n  <div [ngClass]=\"contentColor\" class=\"label-text\">{{ text }}</div>\r\n  <ng-content></ng-content>\r\n</div>"
+            "templateData": "<div class=\"content\" [ngClass]=\"{ 'padding-info': padding }\">\r\n  <div class=\"label-header\">{{ header }}</div>\r\n  <div [ngClass]=\"'DENIED'\" class=\"label-text\">{{ text }}</div>\r\n  <ng-content></ng-content>\r\n</div>\r\n"
         },
         {
             "name": "CheckboxComponent",
@@ -6267,10 +6259,40 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "BannerContent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/insite-kit/src/lib/component/banner/banner.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/insite-kit/src/lib/component/header/header-back/header-back.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "CardContent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/insite-kit/src/lib/component/card/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "CardInfo",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/insite-kit/src/lib/component/card/card-info/card-info.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -6353,11 +6375,41 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/insite-kit/src/lib/component/banner/banner.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<BannerComponent>",
+                "defaultValue": "(args: BannerComponent) => ({\r\n  props: args,\r\n  template: `<ik-banner [type]=\"type\">This is a warning message banner!</ik-banner>`,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/insite-kit/src/lib/component/card/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<CardComponent>",
+                "defaultValue": "(args: CardComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <div class=\"app-container\" style=\"width: 50%;\">\r\n    <ik-card [padding]=\"padding\" [marginBottom]=\"marginBottom\">\r\n      This will be inside of the card\r\n    </ik-card>\r\n    <ik-card [padding]=\"padding\" [marginBottom]=\"marginBottom\">\r\n      Second Card to show margin\r\n    </ik-card>\r\n  </div>`,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/insite-kit/src/lib/component/header/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<HeaderComponent>",
                 "defaultValue": "(args: HeaderComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/insite-kit/src/lib/component/card/card-info/card-info.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<CardInfoComponent>",
+                "defaultValue": "(args: CardInfoComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <div class=\"app-container\" style=\"width: 50%;\">\r\n    <ik-card>\r\n      <ik-card-info [header]=\"header\" [text]=\"text\" [contentColor]=\"contentColor\" [padding]=\"padding\"></ik-card-info>\r\n    </ik-card>\r\n  </div>`,\r\n})"
             },
             {
                 "name": "Template",
@@ -6565,6 +6617,28 @@
             }
         ],
         "groupedVariables": {
+            "projects/insite-kit/src/lib/component/banner/banner.stories.ts": [
+                {
+                    "name": "BannerContent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/insite-kit/src/lib/component/banner/banner.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/insite-kit/src/lib/component/banner/banner.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<BannerComponent>",
+                    "defaultValue": "(args: BannerComponent) => ({\r\n  props: args,\r\n  template: `<ik-banner [type]=\"type\">This is a warning message banner!</ik-banner>`,\r\n})"
+                }
+            ],
             "projects/insite-kit/src/lib/component/header/header-back/header-back.stories.ts": [
                 {
                     "name": "Basic",
@@ -6585,6 +6659,50 @@
                     "deprecationMessage": "",
                     "type": "Story<HeaderBackComponent>",
                     "defaultValue": "(args: HeaderBackComponent) => ({\r\n  props: args,\r\n  template: `<ik-header title=\"Header Back\"><ik-header-back></ik-header-back></ik-header>`,\r\n})"
+                }
+            ],
+            "projects/insite-kit/src/lib/component/card/card.stories.ts": [
+                {
+                    "name": "CardContent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/insite-kit/src/lib/component/card/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/insite-kit/src/lib/component/card/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<CardComponent>",
+                    "defaultValue": "(args: CardComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <div class=\"app-container\" style=\"width: 50%;\">\r\n    <ik-card [padding]=\"padding\" [marginBottom]=\"marginBottom\">\r\n      This will be inside of the card\r\n    </ik-card>\r\n    <ik-card [padding]=\"padding\" [marginBottom]=\"marginBottom\">\r\n      Second Card to show margin\r\n    </ik-card>\r\n  </div>`,\r\n})"
+                }
+            ],
+            "projects/insite-kit/src/lib/component/card/card-info/card-info.stories.ts": [
+                {
+                    "name": "CardInfo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/insite-kit/src/lib/component/card/card-info/card-info.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/insite-kit/src/lib/component/card/card-info/card-info.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<CardInfoComponent>",
+                    "defaultValue": "(args: CardInfoComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <div class=\"app-container\" style=\"width: 50%;\">\r\n    <ik-card>\r\n      <ik-card-info [header]=\"header\" [text]=\"text\" [contentColor]=\"contentColor\" [padding]=\"padding\"></ik-card-info>\r\n    </ik-card>\r\n  </div>`,\r\n})"
                 }
             ],
             "projects/insite-kit/src/test.ts": [
@@ -6890,7 +7008,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 13,
+        "count": 12,
         "status": "low",
         "files": [
             {
@@ -6900,6 +7018,26 @@
                 "name": "BannerComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/insite-kit/src/lib/component/banner/banner.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BannerContent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/insite-kit/src/lib/component/banner/banner.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -6921,12 +7059,52 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/insite-kit/src/lib/component/card/card-info/card-info.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CardInfo",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/insite-kit/src/lib/component/card/card-info/card-info.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/insite-kit/src/lib/component/card/card.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "CardComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/insite-kit/src/lib/component/card/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CardContent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/insite-kit/src/lib/component/card/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

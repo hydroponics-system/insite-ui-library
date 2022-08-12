@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/angular/types-6-0';
 import { HeaderComponent } from 'projects/insite-kit/src/lib/component/header/header.component';
 
 export default {
-  title: 'Insite/Header/Header',
+  title: 'Insite/Components/Header/Header',
   component: HeaderComponent,
 } as Meta;
 

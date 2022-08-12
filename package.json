@@ -8,6 +8,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "preinstall": "npx npm-force-resolutions",
     "build:sass": "sass styles/styles.scss projects/insite-kit/assets/styles.css --style=compressed",
     "build": "npm run build:sass & ng build insite-kit",
     "test": "ng test --code-coverage --source-map=false",
@@ -74,5 +75,10 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "ng-packagr": "^14.1.0",
     "typescript": "~4.7.4"
+  },
+  "resolutions": {
+    "glob-parent": "^6.0.1",
+    "trim": "1.0.0",
+    "trim-newlines": "4.0.2"
   }
 }

@@ -9,22 +9,22 @@
 
 .APPROVED {
   color: #20c283;
-  font-weight: bold !important;
 }
 
 .DENIED {
   color: #ff3648;
-  font-weight: bold !important;
 }
 
 .PENDING {
   color: #f0ae4c;
-  font-weight: bold !important;
 }
 
 .EXPIRED {
   color: #cc0001;
-  font-weight: bold !important;
+}
+
+.DEFAULT {
+  color:white
 }
 
 .label-text {

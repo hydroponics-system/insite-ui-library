@@ -3,7 +3,7 @@ import { HeaderComponent } from '../header.component';
 import { HeaderBackComponent } from './header-back.component';
 
 export default {
-  title: 'Insite/Header/Header Back',
+  title: 'Insite/Components/Header/Header Back',
   component: HeaderBackComponent,
   decorators: [
     moduleMetadata({
@@ -14,7 +14,10 @@ export default {
 
 const Template: Story<HeaderBackComponent> = (args: HeaderBackComponent) => ({
   props: args,
-  template: `<ik-header title="Header Back"><ik-header-back></ik-header-back></ik-header>`,
+  template: `
+  <ik-header title="Header Back">
+    <ik-header-back></ik-header-back>
+  </ik-header>`,
 });
 
 export const Basic = Template.bind({});
