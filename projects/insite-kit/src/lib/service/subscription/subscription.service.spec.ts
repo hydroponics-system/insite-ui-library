@@ -4,20 +4,23 @@ import { of } from 'rxjs';
 import { InsiteTestBed } from '../../test/insite-test-bed';
 import { InisteTestData } from '../../test/test-data';
 import { setupTests } from '../../test/test-setup';
+import { JwtService } from '../auth/jwt.service';
 import { STOMP_SOCKET_CONFIG } from './stomp.config';
 import { SubscriptionService } from './subscription.service';
 
 describe('SubscriptionService', () => {
   let service: SubscriptionService;
+  let jwtService: JwtService;
 
   setupTests(async () => InsiteTestBed.setup());
 
   beforeEach(() => {
     service = TestBed.inject(SubscriptionService);
+    jwtService = TestBed.inject(JwtService);
 
     spyOn(service, 'activate');
     spyOn(service, 'configure');
-    spyOn(localStorage, 'getItem').and.returnValue(InisteTestData.getToken());
+    spyOn(jwtService, 'getToken').and.returnValue(InisteTestData.getToken());
     spyOn(RxStomp.prototype, 'watch').and.returnValue(
       of({ body: '{"id":1}' } as any)
     );

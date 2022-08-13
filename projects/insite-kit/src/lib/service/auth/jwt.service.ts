@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { WebRole } from '../../model/common.model';
 import { User } from '../../model/user.model';
-import { SubscriptionService } from '../subscription/subscription.service';
 
 export const TOKEN_NAME = 'token';
 
@@ -12,9 +11,8 @@ export const TOKEN_NAME = 'token';
 })
 export class JwtService {
   constructor(
-    private readonly router: Router,
-    private readonly jwtHelperService: JwtHelperService,
-    private readonly subscriptionService: SubscriptionService
+    private router: Router,
+    private readonly jwtHelperService: JwtHelperService
   ) {}
 
   /**
@@ -100,7 +98,6 @@ export class JwtService {
    */
   logOut() {
     localStorage.removeItem(TOKEN_NAME);
-    this.subscriptionService.disconnect();
     this.router.navigate(['login']);
   }
 }

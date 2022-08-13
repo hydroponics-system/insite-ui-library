@@ -4,6 +4,7 @@ import { Message } from '@stomp/stompjs';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Notification } from '../../model/notification.model';
+import { JwtService } from '../auth/jwt.service';
 import { UrlService } from '../url-service/url.service';
 import { STOMP_SOCKET_CONFIG } from './stomp.config';
 
@@ -20,7 +21,10 @@ import { STOMP_SOCKET_CONFIG } from './stomp.config';
 export class SubscriptionService extends RxStomp {
   private readonly SOCKET_URL = '/topic/notification';
 
-  constructor(private readonly urlService: UrlService) {
+  constructor(
+    private readonly jwt: JwtService,
+    private readonly urlService: UrlService
+  ) {
     super();
   }
 
@@ -31,9 +35,7 @@ export class SubscriptionService extends RxStomp {
     if (!this.active) {
       this.configure(STOMP_SOCKET_CONFIG);
       this.configure({
-        brokerURL: `${this.urlService.getSocketAPIUrl()}?${localStorage.getItem(
-          'token'
-        )}`,
+        brokerURL: `${this.urlService.getSocketAPIUrl()}?${this.jwt.getToken()}`,
       });
       this.activate();
     }

@@ -64,7 +64,7 @@ export class NavbarComponent extends BaseNavbarComponent {
   }
 
   onLogOutClick() {
+    this.subscriptionService.disconnect();
     this.jwt.logOut();
-    this.subscriptionService.deactivate();
   }
 }
