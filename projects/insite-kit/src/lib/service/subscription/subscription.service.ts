@@ -49,8 +49,16 @@ export class SubscriptionService extends RxStomp {
    * @returns Observable of the caught Notification object.
    */
   listen(destination?: string): Observable<Notification> {
+    this.deactivate;
     return super
       .watch(`${destination ? destination : this.SOCKET_URL}`)
       .pipe(map((res: Message) => JSON.parse(res.body)));
+  }
+
+  /**
+   * Kill the websocket connection.
+   */
+  disconnect() {
+    this.deactivate();
   }
 }
