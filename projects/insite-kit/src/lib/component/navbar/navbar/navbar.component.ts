@@ -60,7 +60,7 @@ export class NavbarComponent extends BaseNavbarComponent {
   }
 
   onProfileClick() {
-    this.jwt.logOut();
+    this.onLogOutClick();
   }
 
   onLogOutClick() {
