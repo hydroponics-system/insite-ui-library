@@ -3353,7 +3353,7 @@
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "templateData": "<div class=\"content\" [ngClass]=\"{ 'padding-info': padding }\">\r\n  <div class=\"label-header\">{{ header }}</div>\r\n  <div [ngClass]=\"'DENIED'\" class=\"label-text\">{{ text }}</div>\r\n  <ng-content></ng-content>\r\n</div>\r\n"
+            "templateData": "<div class=\"content\" [ngClass]=\"{ 'padding-info': padding }\">\r\n  <div class=\"label-header\">{{ header }}</div>\r\n  <div [ngClass]=\"contentColor\" class=\"label-text\">{{ text }}</div>\r\n  <ng-content></ng-content>\r\n</div>\r\n"
         },
         {
             "name": "CheckboxComponent",
@@ -6375,21 +6375,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/insite-kit/src/lib/component/banner/banner.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<BannerComponent>",
-                "defaultValue": "(args: BannerComponent) => ({\r\n  props: args,\r\n  template: `<ik-banner [type]=\"type\">This is a warning message banner!</ik-banner>`,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/insite-kit/src/lib/component/card/card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<CardComponent>",
                 "defaultValue": "(args: CardComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <div class=\"app-container\" style=\"width: 50%;\">\r\n    <ik-card [padding]=\"padding\" [marginBottom]=\"marginBottom\">\r\n      This will be inside of the card\r\n    </ik-card>\r\n    <ik-card [padding]=\"padding\" [marginBottom]=\"marginBottom\">\r\n      Second Card to show margin\r\n    </ik-card>\r\n  </div>`,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/insite-kit/src/lib/component/banner/banner.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<BannerComponent>",
+                "defaultValue": "(args: BannerComponent) => ({\r\n  props: args,\r\n  template: `<ik-banner [type]=\"type\">This is a warning message banner!</ik-banner>`,\r\n})"
             },
             {
                 "name": "Template",
@@ -6419,7 +6419,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<HeaderBackComponent>",
-                "defaultValue": "(args: HeaderBackComponent) => ({\r\n  props: args,\r\n  template: `<ik-header title=\"Header Back\"><ik-header-back></ik-header-back></ik-header>`,\r\n})"
+                "defaultValue": "(args: HeaderBackComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <ik-header title=\"Header Back\">\r\n    <ik-header-back></ik-header-back>\r\n  </ik-header>`,\r\n})"
             },
             {
                 "name": "TOKEN_NAME",
@@ -6658,7 +6658,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<HeaderBackComponent>",
-                    "defaultValue": "(args: HeaderBackComponent) => ({\r\n  props: args,\r\n  template: `<ik-header title=\"Header Back\"><ik-header-back></ik-header-back></ik-header>`,\r\n})"
+                    "defaultValue": "(args: HeaderBackComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <ik-header title=\"Header Back\">\r\n    <ik-header-back></ik-header-back>\r\n  </ik-header>`,\r\n})"
                 }
             ],
             "projects/insite-kit/src/lib/component/card/card.stories.ts": [

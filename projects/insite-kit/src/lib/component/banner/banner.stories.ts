@@ -3,7 +3,7 @@ import { IconComponent } from '../icon/icon.component';
 import { BannerComponent } from './banner.component';
 
 export default {
-  title: 'Insite/Components/Banner',
+  title: 'Insite/Components/Banner/Banner',
   component: BannerComponent,
   decorators: [
     moduleMetadata({
@@ -14,10 +14,14 @@ export default {
 
 const Template: Story<BannerComponent> = (args: BannerComponent) => ({
   props: args,
-  template: `<ik-banner [type]="type">This is a warning message banner!</ik-banner>`,
+  template: `
+  <div class="storybook-container">
+    <ik-banner [type]="type">This is a warning message banner!</ik-banner>
+  </div>
+  `,
 });
 
-export const BannerContent = Template.bind({});
-BannerContent.args = {
+export const Banner = Template.bind({});
+Banner.args = {
   type: 'warning',
 };

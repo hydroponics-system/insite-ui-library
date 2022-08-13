@@ -15,9 +15,10 @@ export default {
 const Template: Story<HeaderBackComponent> = (args: HeaderBackComponent) => ({
   props: args,
   template: `
-  <ik-header title="Header Back">
-    <ik-header-back></ik-header-back>
-  </ik-header>`,
+    <ik-header title="Header Back">
+      <ik-header-back></ik-header-back>
+    </ik-header>
+  `,
 });
 
-export const Basic = Template.bind({});
+export const HeaderBack = Template.bind({});
