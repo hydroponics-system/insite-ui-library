@@ -9,7 +9,7 @@
     "ng": "ng",
     "start": "ng serve",
     "preinstall": "npx npm-force-resolutions",
-    "build:sass": "sass styles/styles.scss projects/insite-kit/assets/styles.css --style=compressed",
+    "build:sass": "sass styles/styles.scss projects/insite-kit/assets/styles.css",
     "build": "npm run build:sass & ng build insite-kit",
     "test": "ng test --code-coverage --source-map=false",
     "test:watch": "ng test --code-coverage --source-map=false --watch",
