@@ -42,8 +42,11 @@ testem.log
 /typings
 .angular
 /test-reports
+
+# Story Book
 styles.css
 styles.css.map
+documentation.json
 
 # System Files
 .DS_Store
