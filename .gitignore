@@ -42,7 +42,8 @@ testem.log
 /typings
 .angular
 /test-reports
-/assets/styles.*
+/assets/styles.css
+/assets/styles.css.map
 
 # System Files
 .DS_Store
