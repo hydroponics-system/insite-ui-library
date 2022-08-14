@@ -21,6 +21,7 @@
     "version:major": "cd projects/insite-kit & npm version major",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
+    "sb": "npm run storybook",
     "build-storybook": "npm run docs:json && build-storybook"
   },
   "dependencies": {
