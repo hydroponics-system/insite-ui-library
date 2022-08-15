@@ -1,3 +1,6 @@
+/**
+ * ngx-toastr overrides
+ */
 :host {
   position: relative;
   overflow: hidden;
@@ -8,10 +11,21 @@
   cursor: pointer;
 }
 
-.notification-toast {
-  border-radius: 15px;
+.toast-container {
+  pointer-events:all;
+  cursor: pointer;
+  position: fixed;
+  z-index: 999999;
 }
 
+.toast-top-right {
+  top: 16px;
+  right: 16px;
+}
+
+/**
+ * Custom Notification Message Classes
+ */
 .notification-toast-icon {
   align-self: center;
   border-radius: 20%;
@@ -20,66 +34,29 @@
   padding: 4px;
 }
 
-.toast-container {
-  pointer-events:all;
-    cursor: pointer;
-    position: fixed;
-    z-index: 999999;
-}
-
-.toast-top-right {
-    top: 12px;
-    right: 12px;
-}
-
-.toast-close-button {
-  color: #999;
-  opacity: 1;
-}
-
-.toast-close-button:hover {
-  color: #02ceff;
-}
-
-.toaster {
+.notification-toaster {
   display: flex;
   color: white;
-  background-color: #333333;
+  background-color: #222B45;
   min-height: 80px;
   border-radius: 10px;
-  box-shadow: 0 3px 5px rgba(100, 100, 100, 0.5);
+  box-shadow: 0 0.5px 5px 0 #1a1f33;
   margin-bottom: 10px;
 }
 
-.toaster .toast-icon {
-  border-radius: 4px 0 0 4px;
-}
-
-.toast-title {
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
-.toast-message {
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 15px;
-}
-
-.toast-details {
-  margin: 0 15px;
+.notification-toast-details {
+  margin: 22px 15px;
   display: flex;
   align-items: center;
 }
 
-.close-icon {
-  position: relative;
+.notification-title {
+  font-size: 16px;
+  margin-bottom: 5px;
 }
 
-.close-icon .toast-close-button {
-  position: absolute;
-  top: 15%;
-  color: white;
-  font-size: 25px;
-  font-weight: 100;
+.notification-message {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
 }

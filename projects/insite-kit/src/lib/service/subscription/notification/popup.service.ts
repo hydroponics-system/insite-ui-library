@@ -36,7 +36,7 @@ export class PopupService {
         timeOut: this.timeout,
         tapToDismiss: false,
         positionClass: 'toast-top-right',
-        toastClass: 'notification-toast',
+        toastClass: 'toaster',
       }
     );
   }

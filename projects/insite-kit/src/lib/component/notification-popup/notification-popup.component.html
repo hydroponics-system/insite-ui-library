@@ -1,25 +1,17 @@
-<div class="toaster">
-  <div class="toast-details">
+<div class="notification-toaster">
+  <div class="notification-toast-details">
     <ik-icon class="notification-toast-icon" icon="notification"></ik-icon>
     <div>
       <div
         *ngIf="title"
+        class="notification-title"
         [class]="options.titleClass"
         [attr.aria-label]="title"
-        class="custom-title"
       >
         {{ title }}
       </div>
       <div
-        *ngIf="message && options.enableHtml"
-        role="alert"
-        aria-live="polite"
-        class="custom-message"
-        [class]="options.messageClass"
-        [innerHTML]="message"
-      ></div>
-      <div
-        *ngIf="message && !options.enableHtml"
+        *ngIf="message"
         role="alert"
         aria-live="polite"
         class="custom-message"
