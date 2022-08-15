@@ -14,7 +14,7 @@ import { PopupService } from '../../service/subscription/notification/popup.serv
   </button>`,
 })
 class ExampleNotificationPopupComponent {
-  count = 0;
+  private count = 0;
 
   constructor(protected readonly popupService: PopupService) {}
 

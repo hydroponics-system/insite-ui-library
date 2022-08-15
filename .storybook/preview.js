@@ -11,4 +11,17 @@ export const parameters = {
     },
   },
   docs: { inlineStories: true },
-}
+  backgrounds: {
+    default: "Navy Dark",
+    values: [
+      {
+        name: "Dark Blue",
+        value: "#222B45",
+      },
+      {
+        name: "Navy Dark",
+        value: "#161D31",
+      },
+    ],
+  },
+};

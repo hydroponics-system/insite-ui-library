@@ -63,20 +63,6 @@ table {
   margin-top: 5px;
 }
 
-.back-arrow {
-  content: url(../assets/images/icons/back-arrow-icon.png);
-  width: 34px;
-  height: auto;
-  display: inline-block;
-  transition: transform 0.2s;
-  margin-right: 15px;
-  cursor: pointer;
-}
-
-.back-arrow:hover {
-  transform: scale(1.1);
-}
-
 .no-data-margin {
   margin: 25px;
 }
