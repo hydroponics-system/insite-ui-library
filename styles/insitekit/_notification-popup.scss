@@ -40,12 +40,13 @@
   background-color: #222B45;
   min-height: 80px;
   border-radius: 10px;
-  box-shadow: 0 0.5px 5px 0 #1a1f33;
+  border: 1px solid #222B45;
+  box-shadow: 2px 2px 4px rgb(0 0 0);
   margin-bottom: 10px;
 }
 
 .notification-toast-details {
-  margin: 22px 15px;
+  margin: 0 15px;
   display: flex;
   align-items: center;
 }
