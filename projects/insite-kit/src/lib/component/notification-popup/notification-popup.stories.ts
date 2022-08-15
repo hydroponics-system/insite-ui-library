@@ -1,4 +1,4 @@
-import { Component, Inject, ViewContainerRef } from '@angular/core';
+import { Component } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { InsiteKitModule } from '../../insite-kit.module';
@@ -16,19 +16,14 @@ import { PopupService } from '../../service/subscription/notification/popup.serv
 class ExampleNotificationPopupComponent {
   count = 0;
 
-  constructor(
-    protected readonly popupService: PopupService,
-    @Inject(ViewContainerRef) viewContainerRef
-  ) {
-    popupService.overlayContainer(viewContainerRef);
-  }
+  constructor(protected readonly popupService: PopupService) {}
 
   showNotification() {
     const notification: Notification = {
       id: ++this.count,
       body: { bodyType: NotificationType.USER },
     };
-    this.popupService.show(notification);
+    this.popupService.showNotification(notification);
   }
 }
 

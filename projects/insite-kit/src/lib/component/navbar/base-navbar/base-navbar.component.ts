@@ -1,11 +1,4 @@
-import {
-  Component,
-  Inject,
-  OnDestroy,
-  OnInit,
-  ViewChild,
-  ViewContainerRef,
-} from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Observable, Subject } from 'rxjs';
@@ -36,11 +29,8 @@ export class BaseNavbarComponent implements OnInit, OnDestroy {
     protected readonly notificationService: NotificationService,
     protected readonly jwt: JwtService,
     protected readonly subscriptionService: SubscriptionService,
-    protected readonly popupService: PopupService,
-    @Inject(ViewContainerRef) viewContainerRef
-  ) {
-    popupService.overlayContainer(viewContainerRef);
-  }
+    protected readonly popupService: PopupService
+  ) {}
 
   ngOnInit() {
     this.subscriptionService.init();
@@ -70,7 +60,7 @@ export class BaseNavbarComponent implements OnInit, OnDestroy {
     return this.subscriptionService
       .listen()
       .pipe(
-        tap((res) => this.popupService.show(res)),
+        tap((res) => this.popupService.showNotification(res)),
         takeUntil(this.destroy)
       )
       .subscribe();

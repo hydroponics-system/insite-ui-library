@@ -2,6 +2,7 @@ import { APP_BASE_HREF, CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -31,7 +32,7 @@ import { ModalHeaderComponent } from './component/modal/modal-header/modal-heade
 import { ModalComponent } from './component/modal/modal.component';
 import { BaseNavbarComponent } from './component/navbar/base-navbar/base-navbar.component';
 import { NavbarComponent } from './component/navbar/navbar/navbar.component';
-import { NotificationMessageComponent } from './component/notification-message/notification-message.component';
+import { NotificationPopupComponent } from './component/notification-popup/notification-popup.component';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { BasicHttpInterceptorService } from './service/interceptor/http-interceptor.service';
 import { UsernamePipe } from './service/pipe/format-user-name.pipe';
@@ -43,7 +44,6 @@ export function tokenGetter() {
 
 @NgModule({
   declarations: [
-    NotificationMessageComponent,
     IconComponent,
     UsernamePipe,
     NotificationMessagePipe,
@@ -72,9 +72,11 @@ export function tokenGetter() {
     GridComponent,
     HeaderBackComponent,
     HeaderComponent,
+    NotificationPopupComponent,
   ],
   imports: [
     CommonModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([]),
     HttpClientModule,
     FontAwesomeModule,
@@ -90,7 +92,6 @@ export function tokenGetter() {
     }),
   ],
   exports: [
-    NotificationMessageComponent,
     IconComponent,
     UsernamePipe,
     NotificationMessagePipe,
@@ -119,8 +120,9 @@ export function tokenGetter() {
     GridComponent,
     HeaderBackComponent,
     HeaderComponent,
+    NotificationPopupComponent,
   ],
-  entryComponents: [ModalComponent, NotificationMessageComponent],
+  entryComponents: [ModalComponent, NotificationPopupComponent],
   providers: [
     UsernamePipe,
     NotificationMessagePipe,

@@ -1,11 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Inject,
-  Input,
-  Output,
-  ViewContainerRef,
-} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   faBars,
@@ -38,17 +31,9 @@ export class NavbarComponent extends BaseNavbarComponent {
     notificationService: NotificationService,
     jwt: JwtService,
     subscriptionService: SubscriptionService,
-    popupService: PopupService,
-    @Inject(ViewContainerRef) viewContainerRef
+    popupService: PopupService
   ) {
-    super(
-      router,
-      notificationService,
-      jwt,
-      subscriptionService,
-      popupService,
-      viewContainerRef
-    );
+    super(router, notificationService, jwt, subscriptionService, popupService);
   }
 
   onMenuClick() {

@@ -27,7 +27,7 @@ export * from './lib/component/modal/modal-header/modal-header.component';
 export * from './lib/component/modal/modal.component';
 export * from './lib/component/navbar/base-navbar/base-navbar.component';
 export * from './lib/component/navbar/navbar/navbar.component';
-export * from './lib/component/notification-message/notification-message.component';
+export * from './lib/component/notification-popup/notification-popup.component';
 export * from './lib/component/sidebar/sidebar.component';
 export * from './lib/insite-kit.module';
 export * from './lib/model/auth-token.model';

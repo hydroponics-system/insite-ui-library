@@ -1,0 +1,33 @@
+<div class="toaster">
+  <div class="toast-details">
+    <ik-icon class="notification-toast-icon" icon="notification"></ik-icon>
+    <div>
+      <div
+        *ngIf="title"
+        [class]="options.titleClass"
+        [attr.aria-label]="title"
+        class="custom-title"
+      >
+        {{ title }}
+      </div>
+      <div
+        *ngIf="message && options.enableHtml"
+        role="alert"
+        aria-live="polite"
+        class="custom-message"
+        [class]="options.messageClass"
+        [innerHTML]="message"
+      ></div>
+      <div
+        *ngIf="message && !options.enableHtml"
+        role="alert"
+        aria-live="polite"
+        class="custom-message"
+        [class]="options.messageClass"
+        [attr.aria-label]="message"
+      >
+        {{ message }}
+      </div>
+    </div>
+  </div>
+</div>
