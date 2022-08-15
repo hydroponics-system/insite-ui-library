@@ -5,6 +5,10 @@
   "main": "index.js",
   "author": "Sam Butler",
   "license": "MIT",
+  "engines": {
+    "node": ">=16.16.0",
+    "npm": ">=8.17.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -78,7 +82,7 @@
     "typescript": "~4.7.4"
   },
   "resolutions": {
-    "glob-parent": "^6.0.1",
+    "glob-parent": "6.0.1",
     "trim": "1.0.0",
     "trim-newlines": "4.0.2"
   }

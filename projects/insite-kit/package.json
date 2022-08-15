@@ -1,6 +1,6 @@
 {
   "name": "insite-kit",
-  "version": "2.8.3",
+  "version": "2.8.4",
   "description": "External UI Library for development with Hydroponics UI.",
   "main": "index.js",
   "author": "Sam Butler",

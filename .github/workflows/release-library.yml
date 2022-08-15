@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: 16.14.0
       - name: Install Library Dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
       - name: Run Build
         run: npm run build
       - name: Publish Package

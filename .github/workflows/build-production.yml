@@ -17,8 +17,8 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v1
         with:
-          node-version: 16.14.0
+          node-version: 16.16.0
       - name: Install Library Dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
       - name: Run Test
         run: npm run test:headless
