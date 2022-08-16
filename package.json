@@ -6,8 +6,8 @@
   "author": "Sam Butler",
   "license": "MIT",
   "engines": {
-    "node": ">=16.16.0",
-    "npm": ">=8.17.0"
+    "node": ">=16.14.0",
+    "npm": ">=8.3.1"
   },
   "scripts": {
     "ng": "ng",
