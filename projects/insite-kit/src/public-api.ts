@@ -19,6 +19,7 @@ export * from './lib/component/grid/grid.component';
 export * from './lib/component/header/header-back/header-back.component';
 export * from './lib/component/header/header.component';
 export * from './lib/component/icon/icon.component';
+export * from './lib/component/indicator-light/indicator-light.component';
 export * from './lib/component/insite-page/insite-page.component';
 export * from './lib/component/loading/loading.component';
 export * from './lib/component/modal/modal-action-bar/modal-action-bar.component';

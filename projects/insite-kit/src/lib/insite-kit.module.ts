@@ -24,6 +24,7 @@ import { GridComponent } from './component/grid/grid.component';
 import { HeaderBackComponent } from './component/header/header-back/header-back.component';
 import { HeaderComponent } from './component/header/header.component';
 import { IconComponent } from './component/icon/icon.component';
+import { IndicatorLightComponent } from './component/indicator-light/indicator-light.component';
 import { InsitePageComponent } from './component/insite-page/insite-page.component';
 import { LoadingComponent } from './component/loading/loading.component';
 import { ModalActionBarComponent } from './component/modal/modal-action-bar/modal-action-bar.component';
@@ -73,6 +74,7 @@ export function tokenGetter() {
     HeaderBackComponent,
     HeaderComponent,
     NotificationPopupComponent,
+    IndicatorLightComponent,
   ],
   imports: [
     CommonModule,
@@ -121,6 +123,7 @@ export function tokenGetter() {
     HeaderBackComponent,
     HeaderComponent,
     NotificationPopupComponent,
+    IndicatorLightComponent,
   ],
   entryComponents: [ModalComponent, NotificationPopupComponent],
   providers: [
