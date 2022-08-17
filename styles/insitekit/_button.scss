@@ -186,6 +186,30 @@
   &.btn-flat {
     @include btn-flat(#546e7a, #90a4ae, #78909c, #cfd8dc, #eceff1, #b0bec5);
   }
+
+  &.btn-round {
+    @include btn-round(
+      #546e7a,
+      #90a4ae,
+      #78909c,
+      #cfd8dc,
+      #eceff1,
+      #b0bec5,
+      transparent
+    );
+
+    &__swap {
+      @include btn-round(
+        #ffffff,
+        #90a4ae,
+        #ffffff,
+        #ffffff,
+        #eceff1,
+        #b0bec5,
+        #455a64
+      );
+    }
+  }
 }
 
 .btn-primary {
@@ -258,6 +282,30 @@
   &.btn-flat {
     @include btn-flat(#00acc1, #4dd0e1, #26c6da, #b2ebf2, #e0f7fa, #80deea);
   }
+
+  &.btn-round {
+    @include btn-round(
+      #00acc1,
+      #4dd0e1,
+      #26c6da,
+      #b2ebf2,
+      #e0f7fa,
+      #80deea,
+      transparent
+    );
+
+    &__swap {
+      @include btn-round(
+        #ffffff,
+        #4dd0e1,
+        #ffffff,
+        #ffffff,
+        #e0f7fa,
+        #80deea,
+        #0097a7
+      );
+    }
+  }
 }
 
 .btn-warning {
@@ -274,6 +322,30 @@
   &.btn-flat {
     @include btn-flat(#fb8c00, #ffb74d, #ffa726, #ffe0b2, #fff3e0, #ffcc80);
   }
+
+  &.btn-round {
+    @include btn-round(
+      #fb8c00,
+      #ffb74d,
+      #ffa726,
+      #ffe0b2,
+      #fff3e0,
+      #ffcc80,
+      transparent
+    );
+
+    &__swap {
+      @include btn-round(
+        #ffffff,
+        #ffb74d,
+        #ffffff,
+        #ffffff,
+        #fff3e0,
+        #ffcc80,
+        #f57c00
+      );
+    }
+  }
 }
 
 .btn-danger {
@@ -289,6 +361,30 @@
 
   &.btn-flat {
     @include btn-flat(#f4511e, #ff8a65, #ff7043, #ffccbc, #fbe9e7, #ffab91);
+  }
+
+  &.btn-round {
+    @include btn-round(
+      #f4511e,
+      #ff8a65,
+      #ff7043,
+      #ffccbc,
+      #fbe9e7,
+      #ffab91,
+      transparent
+    );
+
+    &__swap {
+      @include btn-round(
+        #ffffff,
+        #ff8a65,
+        #ffffff,
+        #ffffff,
+        #fbe9e7,
+        #ffab91,
+        #e64a19
+      );
+    }
   }
 }
 

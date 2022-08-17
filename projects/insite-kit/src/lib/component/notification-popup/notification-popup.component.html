@@ -1,6 +1,10 @@
 <div class="notification-toaster">
   <div class="notification-toast-details">
-    <ik-icon class="notification-toast-icon" icon="notification"></ik-icon>
+    <!-- <ik-icon class="notification-toast-icon" icon="notification"></ik-icon> -->
+    <fa-icon
+      class="notification-toast-icon"
+      [icon]="notificationBellIcon"
+    ></fa-icon>
     <div>
       <div
         *ngIf="title"

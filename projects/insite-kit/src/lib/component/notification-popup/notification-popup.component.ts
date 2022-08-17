@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faBell } from '@fortawesome/free-solid-svg-icons';
 
 import { Toast, ToastPackage, ToastrService } from 'ngx-toastr';
 import { NOTIFICATION_ANIMATION } from './notification-popup.animation';
@@ -10,6 +11,8 @@ import { NOTIFICATION_ANIMATION } from './notification-popup.animation';
   preserveWhitespaces: false,
 })
 export class NotificationPopupComponent extends Toast {
+  notificationBellIcon = faBell;
+
   constructor(tService: ToastrService, tPackage: ToastPackage) {
     super(tService, tPackage);
   }

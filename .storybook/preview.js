@@ -24,4 +24,8 @@ export const parameters = {
       },
     ],
   },
+  darkMode: {
+    // Set the initial theme
+    current: "dark",
+  },
 };
