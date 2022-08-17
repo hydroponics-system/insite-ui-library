@@ -3,11 +3,11 @@
 ******************************************************/
 .default-loader {
   margin: 15px auto 0;
-  border: solid #f3f3f3;
+  border: solid #3366FF;
   border-radius: 50%;
-  border-top: solid #3498db;
-  -webkit-animation: spin 0.65s linear infinite;
-  animation: spin 0.65s linear infinite;
+  border-top: solid #151A30;
+  border-bottom: solid #151A30;
+  animation: spin 1.0s linear infinite;
 }
 
 /* Safari */

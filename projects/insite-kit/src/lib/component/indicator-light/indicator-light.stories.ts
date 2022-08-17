@@ -15,10 +15,18 @@ const Template: Story<IndicatorLightComponent> = () => ({
   props,
   template: `
   <div class="storybook-container">
-    <div style="margin-bottom: 100px;" *ngFor="let light of lights">
-      <div style="display: flex; flex-direction: column; align-items: center;">
-        <ik-indicator-light [status]="light"></ik-indicator-light>
-        <span style="color:white; display:block; font-size: 20px;">{{light}}</span>
+    <div class="row">
+      <div class="col-sm-4" align="center">
+        <ik-indicator-light status="success"></ik-indicator-light>
+        <span style="color:white; display:block; font-size: 20px;">Success</span>
+      </div>
+      <div class="col-sm-4" align="center">
+        <ik-indicator-light status="warning"></ik-indicator-light>
+        <span style="color:white; display:block; font-size: 20px;">Warning</span>
+      </div>
+      <div class="col-sm-4" align="center">
+        <ik-indicator-light status="danger"></ik-indicator-light>
+        <span style="color:white; display:block; font-size: 20px;">Danger</span>
       </div>
     </div>
   </div>
