@@ -10,7 +10,7 @@ import {
   templateUrl: 'banner.component.html',
 })
 export class BannerComponent {
-  @Input() type: 'info' | 'danger' | 'warning' = 'warning';
+  @Input() type: 'info' | 'danger' | 'warning';
 
   warningIcon = faTriangleExclamation;
   dangerIcon = faCircleExclamation;

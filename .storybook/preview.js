@@ -1,8 +1,13 @@
 import { setCompodocJson } from "@storybook/addon-docs/angular";
+import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import docJson from "../documentation.json";
 setCompodocJson(docJson);
 
 export const parameters = {
+  layout: "fullscreen",
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
+  },
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {

@@ -23,6 +23,7 @@ import { GridShowAllComponent } from './component/grid/grid-show-all/grid-show-a
 import { GridComponent } from './component/grid/grid.component';
 import { HeaderBackComponent } from './component/header/header-back/header-back.component';
 import { HeaderComponent } from './component/header/header.component';
+import { IconComponent } from './component/icon/icon.component';
 import { IndicatorLightComponent } from './component/indicator-light/indicator-light.component';
 import { InsitePageComponent } from './component/insite-page/insite-page.component';
 import { LoadingComponent } from './component/loading/loading.component';
@@ -73,6 +74,7 @@ export function tokenGetter() {
     HeaderComponent,
     NotificationPopupComponent,
     IndicatorLightComponent,
+    IconComponent,
   ],
   imports: [
     CommonModule,
@@ -121,6 +123,7 @@ export function tokenGetter() {
     HeaderComponent,
     NotificationPopupComponent,
     IndicatorLightComponent,
+    IconComponent,
   ],
   entryComponents: [ModalComponent, NotificationPopupComponent],
   providers: [

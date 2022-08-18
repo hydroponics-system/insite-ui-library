@@ -3,7 +3,7 @@ import { InsiteTestBed } from '../../../test/insite-test-bed';
 import { setupTests } from '../../../test/test-setup';
 import { CardHeaderComponent } from './card-header.component';
 
-describe('BannerComponent', () => {
+describe('CardHeaderComponent', () => {
   let component: CardHeaderComponent;
   let fixture: ComponentFixture<CardHeaderComponent>;
 

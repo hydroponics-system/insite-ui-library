@@ -1,4 +1,6 @@
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { IconComponent } from '../../icon/icon.component';
 import { HeaderComponent } from '../header.component';
 import { HeaderBackComponent } from './header-back.component';
 
@@ -7,7 +9,8 @@ export default {
   component: HeaderBackComponent,
   decorators: [
     moduleMetadata({
-      declarations: [HeaderComponent],
+      imports: [FontAwesomeModule],
+      declarations: [HeaderComponent, IconComponent],
     }),
   ],
 } as Meta;

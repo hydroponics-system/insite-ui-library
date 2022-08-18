@@ -1,19 +1,19 @@
 <div class="ik-banner" [ngClass]="type">
-  <fa-icon
-    *ngIf="type === 'warning'"
-    [icon]="warningIcon"
-    class="banner-icon"
-  ></fa-icon>
-  <fa-icon
+  <ik-icon
     *ngIf="type === 'info'"
     [icon]="infoIcon"
-    class="banner-icon"
-  ></fa-icon>
-  <fa-icon
+    classOverride="banner-icon"
+  ></ik-icon>
+  <ik-icon
     *ngIf="type === 'danger'"
     [icon]="dangerIcon"
-    class="banner-icon"
-  ></fa-icon>
+    classOverride="banner-icon"
+  ></ik-icon>
+  <ik-icon
+    *ngIf="type === 'warning'"
+    [icon]="warningIcon"
+    classOverride="banner-icon"
+  ></ik-icon>
   <div class="banner-content" [ngClass]="type">
     <ng-content></ng-content>
   </div>

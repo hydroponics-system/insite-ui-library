@@ -1,11 +1,20 @@
 <nav class="app-navbar">
-  <div class="nav-icons__left" (click)="onMenuClick()">
-    <fa-icon [icon]="sideBarOpen ? closeIcon : menuIcon"></fa-icon>
-  </div>
+  <ik-icon
+    classOverride="nav-icons__left"
+    [icon]="sideBarOpen ? closeIcon : menuIcon"
+    (click)="onMenuClick()"
+  ></ik-icon>
 
   <div class="app-title inline-block">{{ appName }}</div>
-  <div class="nav-icons__right" (click)="onProfileClick()">
-    <fa-icon [icon]="profileIcon" (click)="onProfileClick()"></fa-icon>
+  <div (click)="onProfileClick()">
+    <ik-icon
+      classOverride="nav-icons__right"
+      [icon]="profileIcon"
+      (click)="onProfileClick()"
+    ></ik-icon>
   </div>
-  <fa-icon class="nav-icons__right" [icon]="notificationBellIcon"></fa-icon>
+  <ik-icon
+    classOverride="nav-icons__right"
+    [icon]="notificationBellIcon"
+  ></ik-icon>
 </nav>
