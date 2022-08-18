@@ -50,6 +50,7 @@ export class SidebarComponent {
   }
 
   route(path: string) {
+    this.close();
     this.router.navigate([path]);
   }
 }
