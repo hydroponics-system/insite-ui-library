@@ -6,6 +6,8 @@ import { JwtService } from './jwt.service';
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
+  readonly UNAUTHENTICATED_ROUTES = ['login', 'register'];
+
   constructor(private router: Router, private jwt: JwtService) {}
 
   /**
@@ -17,7 +19,7 @@ export class AuthGuard implements CanActivate {
    */
   canActivate(next: ActivatedRouteSnapshot): boolean {
     if (!this.jwt.isAuthenticated()) {
-      if (next.routeConfig.path !== 'login') {
+      if (!this.UNAUTHENTICATED_ROUTES.includes(next.routeConfig.path)) {
         this.router.navigate(['/login']);
         return false;
       }
