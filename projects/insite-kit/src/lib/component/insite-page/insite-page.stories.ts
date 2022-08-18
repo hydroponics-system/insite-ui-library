@@ -14,6 +14,7 @@ export default {
 
 const Template: Story<InsitePageComponent> = (args: InsitePageComponent) => ({
   props: args,
+  template: `<ik-insite-page appName="Storybook Page"></ik-insite-page>`,
 });
 
 export const Page = Template.bind({});

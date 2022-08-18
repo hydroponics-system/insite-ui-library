@@ -1,34 +1,34 @@
 <div class="sidenav" id="sideBarNav" #sidebarNav>
-  <a href="home">
+  <div (click)="route('/home')">
     <ik-icon classOverride="nav-icon" [icon]="homeIcon"></ik-icon>
     <span class="nav-category">Home</span>
-  </a>
-  <a href="users">
+  </div>
+  <div (click)="route('/users')">
     <ik-icon classOverride="nav-icon" [icon]="usersIcon"></ik-icon>
     <span class="nav-category">Users</span>
-  </a>
-  <a href="services">
+  </div>
+  <div (click)="route('/services')">
     <ik-icon classOverride="nav-icon" [icon]="serviceIcon"></ik-icon>
     <span class="nav-category">Services</span>
-  </a>
-  <a href="systems">
+  </div>
+  <div (click)="route('/systems')">
     <ik-icon classOverride="nav-icon" [icon]="systemIcon"></ik-icon>
     <span class="nav-category">Systems</span>
-  </a>
-  <a href="about">
+  </div>
+  <div (click)="route('/about')">
     <ik-icon classOverride="nav-icon" [icon]="aboutIcon"></ik-icon>
     <span class="nav-category">About</span>
-  </a>
-  <a href="repo">
+  </div>
+  <div (click)="route('/repo')">
     <ik-icon classOverride="nav-icon" [icon]="gitIcon"></ik-icon>
     <span class="nav-category">Repositories</span>
-  </a>
-  <a href="contact">
+  </div>
+  <div (click)="route('/contact')">
     <ik-icon classOverride="nav-icon" [icon]="contactIcon"></ik-icon>
     <span class="nav-category">Contact</span>
-  </a>
-  <a href="settings">
+  </div>
+  <div (click)="route('/settings')">
     <ik-icon classOverride="nav-icon" [icon]="settingsIcon"></ik-icon>
     <span class="nav-category">Settings</span>
-  </a>
+  </div>
 </div>

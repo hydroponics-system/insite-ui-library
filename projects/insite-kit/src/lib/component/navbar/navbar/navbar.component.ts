@@ -45,7 +45,7 @@ export class NavbarComponent extends BaseNavbarComponent {
   }
 
   onProfileClick() {
-    this.onLogOutClick();
+    this.router.navigate(['/profile']);
   }
 
   onLogOutClick() {

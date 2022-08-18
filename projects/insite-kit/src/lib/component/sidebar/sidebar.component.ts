@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import {
   faCircleInfo,
@@ -28,6 +29,8 @@ export class SidebarComponent {
   gitIcon = faGithub;
   settingsIcon = faGear;
 
+  constructor(private readonly router: Router) {}
+
   open() {
     document.getElementById('sideBarNav').style.width = '250px';
     this.isOpen = true;
@@ -44,5 +47,9 @@ export class SidebarComponent {
     } else {
       this.open();
     }
+  }
+
+  route(path: string) {
+    this.router.navigate([path]);
   }
 }
