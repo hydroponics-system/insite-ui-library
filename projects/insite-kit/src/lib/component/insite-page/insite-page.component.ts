@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, Inject, Input, ViewChild } from '@angular/core';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
@@ -8,4 +8,6 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 export class InsitePageComponent {
   @ViewChild('sidebarNav') sideBar: SidebarComponent;
   @Input() appName: string;
+
+  constructor(@Inject('env') public env) {}
 }

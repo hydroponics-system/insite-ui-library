@@ -12,6 +12,7 @@ import { CardHeaderComponent } from './component/card/card-header/card-header.co
 import { CardInfoComponent } from './component/card/card-info/card-info.component';
 import { CardComponent } from './component/card/card.component';
 import { CheckboxComponent } from './component/checkbox/checkbox.component';
+import { EnvironmentBannerComponent } from './component/environment-banner/environment-banner.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { ContactAdminModalComponent } from './component/footer/modals/contact-admin-modal/contact-admin-modal.component';
 import { PrivacyPolicyModalComponent } from './component/footer/modals/privacy-policy-modal/privacy-policy-modal.component';
@@ -75,6 +76,7 @@ export function tokenGetter() {
     NotificationPopupComponent,
     IndicatorLightComponent,
     IconComponent,
+    EnvironmentBannerComponent,
   ],
   imports: [
     CommonModule,
@@ -124,6 +126,7 @@ export function tokenGetter() {
     NotificationPopupComponent,
     IndicatorLightComponent,
     IconComponent,
+    EnvironmentBannerComponent,
   ],
   entryComponents: [ModalComponent, NotificationPopupComponent],
   providers: [

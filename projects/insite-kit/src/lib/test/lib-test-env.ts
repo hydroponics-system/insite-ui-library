@@ -5,7 +5,8 @@
  * @since February 25, 2022
  */
 export const environment = {
-  production: true,
+  tag: 'TEST',
+  production: false,
   isLocal: false,
   apiUrl: 'test-host.com',
 };

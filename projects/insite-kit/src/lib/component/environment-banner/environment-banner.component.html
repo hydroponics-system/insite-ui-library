@@ -1,0 +1,7 @@
+<ng-container *ngIf="type !== 'PRODUCTION'">
+  <div class="ik-environment-banner" [ngClass]="type">
+    <div class="environment-banner-content" [ngClass]="type">
+      {{ type }}
+    </div>
+  </div>
+</ng-container>
