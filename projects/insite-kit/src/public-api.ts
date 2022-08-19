@@ -7,7 +7,6 @@ export * from './lib/component/card/card-header/card-header.component';
 export * from './lib/component/card/card-info/card-info.component';
 export * from './lib/component/card/card.component';
 export * from './lib/component/checkbox/checkbox.component';
-export * from './lib/component/environment-banner/environment-banner.component';
 export * from './lib/component/footer/footer.component';
 export * from './lib/component/footer/modals/contact-admin-modal/contact-admin-modal.component';
 export * from './lib/component/footer/modals/privacy-policy-modal/privacy-policy-modal.component';
