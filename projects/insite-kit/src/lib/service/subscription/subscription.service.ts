@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { RxStomp } from '@stomp/rx-stomp';
 import { Message } from '@stomp/stompjs';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { Notification } from '../../model/notification.model';
 import { JwtService } from '../auth/jwt.service';
 import { UrlService } from '../url-service/url.service';
@@ -19,7 +19,7 @@ import { STOMP_SOCKET_CONFIG } from './stomp.config';
   providedIn: 'root',
 })
 export class SubscriptionService extends RxStomp {
-  private readonly SOCKET_URL = '/topic/notification';
+  private readonly SOCKET_URL = '/topic/user/notification';
 
   constructor(
     private readonly jwt: JwtService,
@@ -49,10 +49,13 @@ export class SubscriptionService extends RxStomp {
    * @returns Observable of the caught Notification object.
    */
   listen(destination?: string): Observable<Notification> {
-    this.deactivate;
-    return super
-      .watch(`${destination ? destination : this.SOCKET_URL}`)
-      .pipe(map((res: Message) => JSON.parse(res.body)));
+    return this.subscriptionSession().pipe(
+      switchMap((session) =>
+        super
+          .watch(`${destination ? destination : this.SOCKET_URL}-${session}`)
+          .pipe(map((res: Message) => JSON.parse(res.body)))
+      )
+    );
   }
 
   /**
@@ -60,5 +63,15 @@ export class SubscriptionService extends RxStomp {
    */
   disconnect() {
     this.deactivate();
+  }
+
+  /**
+   * Gets the session id for the user. This will be a UUID that will
+   * only belong to this user logged in.
+   *
+   * @returns Observable of the session id.
+   */
+  subscriptionSession() {
+    return this.serverHeaders$.pipe(map((session) => session['user-name']));
   }
 }

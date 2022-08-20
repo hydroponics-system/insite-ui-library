@@ -24,6 +24,7 @@ describe('SubscriptionService', () => {
     spyOn(RxStomp.prototype, 'watch').and.returnValue(
       of({ body: '{"id":1}' } as any)
     );
+    spyOn(service, 'subscriptionSession').and.returnValue(of('fakeUUID'));
   });
 
   it('should create service', () => {
@@ -50,7 +51,9 @@ describe('SubscriptionService', () => {
 
   it('should listen to the connection on the default socket', (done) => {
     service.listen().subscribe((res) => {
-      expect(service.watch).toHaveBeenCalledWith('/topic/notification');
+      expect(service.watch).toHaveBeenCalledWith(
+        '/topic/user/notification-fakeUUID'
+      );
       expect(res.id).toEqual(1);
       done();
     });
@@ -58,7 +61,7 @@ describe('SubscriptionService', () => {
 
   it('should listen to the connection on the passed in socket path', (done) => {
     service.listen('new/path').subscribe((res) => {
-      expect(service.watch).toHaveBeenCalledWith('new/path');
+      expect(service.watch).toHaveBeenCalledWith('new/path-fakeUUID');
       expect(res.id).toEqual(1);
       done();
     });
