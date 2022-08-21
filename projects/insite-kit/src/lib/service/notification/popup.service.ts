@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActiveToast, ToastrService } from 'ngx-toastr';
-import { NotificationPopupComponent } from '../../../component/notification-popup/notification-popup.component';
-import {
-  Notification,
-  NotificationType,
-} from '../../../model/notification.model';
+import { NotificationPopupComponent } from '../../component/notification-popup/notification-popup.component';
+import { Notification, NotificationType } from '../../model/notification.model';
 
 /**
  * Service for showing notifications in the application. It will add the component to

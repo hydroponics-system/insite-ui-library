@@ -1,10 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 import { RxStomp } from '@stomp/rx-stomp';
 import { of } from 'rxjs';
-import { InsiteTestBed } from '../../test/insite-test-bed';
-import { InisteTestData } from '../../test/test-data';
-import { setupTests } from '../../test/test-setup';
-import { JwtService } from '../auth/jwt.service';
+import { JwtService } from '../service/auth/jwt.service';
+import { InsiteTestBed } from '../test/insite-test-bed';
+import { InisteTestData } from '../test/test-data';
+import { setupTests } from '../test/test-setup';
 import { STOMP_SOCKET_CONFIG } from './stomp.config';
 import { SubscriptionService } from './subscription.service';
 
@@ -49,18 +49,8 @@ describe('SubscriptionService', () => {
     expect(service.activate).not.toHaveBeenCalled();
   });
 
-  it('should listen to the connection on the default socket', (done) => {
-    service.listen().subscribe((res) => {
-      expect(service.watch).toHaveBeenCalledWith(
-        '/topic/user/notification-fakeUUID'
-      );
-      expect(res.id).toEqual(1);
-      done();
-    });
-  });
-
-  it('should listen to the connection on the passed in socket path', (done) => {
-    service.listen('new/path').subscribe((res) => {
+  it('should listen to the connection on the socket path for unique user', (done) => {
+    service.listen('new/path', true).subscribe((res) => {
       expect(service.watch).toHaveBeenCalledWith('new/path-fakeUUID');
       expect(res.id).toEqual(1);
       done();

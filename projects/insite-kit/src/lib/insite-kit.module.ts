@@ -31,13 +31,14 @@ import { ModalActionBarComponent } from './component/modal/modal-action-bar/moda
 import { ModalBodyComponent } from './component/modal/modal-body/modal-body.component';
 import { ModalHeaderComponent } from './component/modal/modal-header/modal-header.component';
 import { ModalComponent } from './component/modal/modal.component';
-import { BaseNavbarComponent } from './component/navbar/base-navbar/base-navbar.component';
-import { NavbarComponent } from './component/navbar/navbar/navbar.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
 import { NotificationPopupComponent } from './component/notification-popup/notification-popup.component';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { BasicHttpInterceptorService } from './service/interceptor/http-interceptor.service';
 import { UsernamePipe } from './service/pipe/format-user-name.pipe';
 import { NotificationMessagePipe } from './service/pipe/notification-message.pipe';
+import { InisteGeneralNotificationComponent } from './subscription/insite-general-notification/insite-general-notification.component';
+import { InisteUserNotificationComponent } from './subscription/insite-user-notification/insite-user-notification.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -48,7 +49,6 @@ export function tokenGetter() {
     UsernamePipe,
     NotificationMessagePipe,
     NavbarComponent,
-    BaseNavbarComponent,
     SidebarComponent,
     InsitePageComponent,
     ContactAdminModalComponent,
@@ -75,6 +75,8 @@ export function tokenGetter() {
     NotificationPopupComponent,
     IndicatorLightComponent,
     IconComponent,
+    InisteUserNotificationComponent,
+    InisteGeneralNotificationComponent,
   ],
   imports: [
     CommonModule,
@@ -97,7 +99,6 @@ export function tokenGetter() {
     UsernamePipe,
     NotificationMessagePipe,
     NavbarComponent,
-    BaseNavbarComponent,
     SidebarComponent,
     InsitePageComponent,
     ContactAdminModalComponent,
@@ -124,6 +125,8 @@ export function tokenGetter() {
     NotificationPopupComponent,
     IndicatorLightComponent,
     IconComponent,
+    InisteUserNotificationComponent,
+    InisteGeneralNotificationComponent,
   ],
   entryComponents: [ModalComponent, NotificationPopupComponent],
   providers: [

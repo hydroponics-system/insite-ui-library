@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { InsiteKitModule } from '../../insite-kit.module';
 import { Notification, NotificationType } from '../../model/notification.model';
-import { PopupService } from '../../service/subscription/notification/popup.service';
+import { PopupService } from '../../service/notification/popup.service';
 @Component({
   selector: 'storybook-example-notification',
   template: `<button

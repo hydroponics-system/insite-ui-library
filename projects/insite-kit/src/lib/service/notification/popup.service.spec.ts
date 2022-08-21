@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
-import { InsiteTestBed } from '../../../test/insite-test-bed';
-import { setupTests } from '../../../test/test-setup';
+import { InsiteTestBed } from '../../test/insite-test-bed';
+import { setupTests } from '../../test/test-setup';
 import { PopupService } from './popup.service';
 
 describe('PopupService', () => {
