@@ -19,7 +19,7 @@ import { STOMP_SOCKET_CONFIG } from './stomp.config';
   providedIn: 'root',
 })
 export class SubscriptionService extends RxStomp {
-  private readonly SOCKET_URL = '/topic/user/notification';
+  private readonly SOCKET_URL = '/queue/user/notification';
 
   constructor(
     private readonly jwt: JwtService,
