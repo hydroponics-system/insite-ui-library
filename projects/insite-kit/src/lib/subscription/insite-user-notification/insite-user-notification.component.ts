@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject, takeUntil, tap } from 'rxjs';
+import { Subject } from 'rxjs';
+import { takeUntil, tap } from 'rxjs/operators';
 import { PopupService } from '../../service/notification/popup.service';
 import { SubscriptionService } from '../subscription.service';
 
