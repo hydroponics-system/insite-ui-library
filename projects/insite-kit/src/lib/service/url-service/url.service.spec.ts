@@ -32,14 +32,14 @@ describe('UrlService', () => {
 
   it('should get the socket URL for PROD environment', () => {
     expect(service.getSocketAPIUrl()).toEqual(
-      'wss://test-host.com/api/subscription'
+      'wss://test-host.com/api/subscription/socket'
     );
   });
 
   it('should get the socket URL for LOCAL environment', () => {
     spyOn(environmentConfig, 'isLocal').and.returnValue(true);
     expect(service.getSocketAPIUrl()).toEqual(
-      'ws://test-host.com/api/subscription'
+      'ws://test-host.com/api/subscription/socket'
     );
   });
 });
