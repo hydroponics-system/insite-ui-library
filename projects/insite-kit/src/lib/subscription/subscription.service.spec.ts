@@ -36,7 +36,7 @@ describe('SubscriptionService', () => {
 
     expect(service.configure).toHaveBeenCalledWith(STOMP_SOCKET_CONFIG);
     expect(service.configure).toHaveBeenCalledWith({
-      brokerURL: `wss://test-host.com/api/subscription/socket?${InisteTestData.getToken()}`,
+      brokerURL: `wss://test-host.com/subscription/socket?${InisteTestData.getToken()}`,
     });
     expect(service.activate).toHaveBeenCalled();
   });

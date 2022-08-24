@@ -32,9 +32,9 @@ export class UrlService {
    */
   getSocketAPIUrl() {
     if (this.env.isLocal) {
-      return `ws://${this.env.apiUrl}/api/subscription/socket`;
+      return `ws://${this.env.apiUrl}/subscription/socket`;
     } else {
-      return `wss://${this.env.apiUrl}/api/subscription/socket`;
+      return `wss://${this.env.apiUrl}/subscription/socket`;
     }
   }
 }
