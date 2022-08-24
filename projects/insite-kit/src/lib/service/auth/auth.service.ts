@@ -9,6 +9,8 @@ import { JwtService } from './jwt.service';
   providedIn: 'root',
 })
 export class AuthService {
+  readonly BASE_AUTH_PATH = 'api';
+
   constructor(private request: RequestService, private jwt: JwtService) {}
 
   /**
@@ -20,7 +22,10 @@ export class AuthService {
    */
   authenticate(email: string, password: string): Observable<AuthToken> {
     return this.request
-      .post<AuthToken>('authenticate', { email, password })
+      .post<AuthToken>(`${this.BASE_AUTH_PATH}/authenticate`, {
+        email,
+        password,
+      })
       .pipe(tap((u) => this.jwt.setToken(u.token)));
   }
 
@@ -31,7 +36,7 @@ export class AuthService {
    */
   reauthenticate(): Observable<AuthToken> {
     return this.request
-      .post<AuthToken>('reauthenticate')
+      .post<AuthToken>(`${this.BASE_AUTH_PATH}/reauthenticate`)
       .pipe(tap((u) => this.jwt.setToken(u.token)));
   }
 }

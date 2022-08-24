@@ -32,7 +32,7 @@ describe('AuthService', () => {
 
   it('should authenticate a user', (done) => {
     service.authenticate('test@mail.com', 'fakePassword').subscribe(() => {
-      expect(requestService.post).toHaveBeenCalledWith('authenticate', {
+      expect(requestService.post).toHaveBeenCalledWith('api/authenticate', {
         email: 'test@mail.com',
         password: 'fakePassword',
       });
@@ -43,7 +43,7 @@ describe('AuthService', () => {
 
   it('should authenticate a user', (done) => {
     service.reauthenticate().subscribe(() => {
-      expect(requestService.post).toHaveBeenCalledWith('reauthenticate');
+      expect(requestService.post).toHaveBeenCalledWith('api/reauthenticate');
       expect(jwtService.setToken).toHaveBeenCalledWith('fakeToken');
       done();
     });
