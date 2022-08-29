@@ -4,7 +4,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { InsiteKitModule } from '../../insite-kit.module';
 import { ModalComponent } from './modal.component';
 @Component({
-  selector: 'storybook-example-modal',
+  selector: 'ik-storybook-example-modal',
   template: `
     <button
       class="btn btn-round btn-default block"

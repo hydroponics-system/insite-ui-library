@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/insite-kit",
       "sourceRoot": "projects/insite-kit/src",
-      "prefix": "lib",
+      "prefix": "ik",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -30,6 +30,15 @@
             "main": "projects/insite-kit/src/test.ts",
             "tsConfig": "projects/insite-kit/tsconfig.spec.json",
             "karmaConfig": "projects/insite-kit/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/insite-kit/src/**/*.ts",
+              "projects/insite-kit/src/**/*.html"
+            ]
           }
         }
       }
@@ -55,5 +64,10 @@
         }
       }
     }
+  },
+  "cli": {
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

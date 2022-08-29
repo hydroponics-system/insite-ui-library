@@ -5,7 +5,7 @@ import { Toast, ToastPackage, ToastrService } from 'ngx-toastr';
 import { NOTIFICATION_ANIMATION } from './notification-popup.animation';
 
 @Component({
-  selector: '[custom-toast-component]',
+  selector: '[ik-custom-toast-component]',
   templateUrl: `notification-popup.component.html`,
   animations: [NOTIFICATION_ANIMATION],
   preserveWhitespaces: false,

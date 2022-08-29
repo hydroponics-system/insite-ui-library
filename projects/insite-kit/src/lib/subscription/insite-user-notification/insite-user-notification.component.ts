@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 import { PopupService } from '../../service/notification/popup.service';
@@ -8,7 +8,7 @@ import { SubscriptionService } from '../subscription.service';
   selector: 'ik-insite-user-notification',
   template: ``,
 })
-export class InisteUserNotificationComponent implements OnInit {
+export class InisteUserNotificationComponent implements OnInit, OnDestroy {
   private readonly USER_SOCKET_URL = '/queue/user/notification';
   destroy = new Subject<void>();
 
