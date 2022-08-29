@@ -17,9 +17,6 @@
           "configurations": {
             "production": {
               "tsConfig": "projects/insite-kit/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/insite-kit/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
