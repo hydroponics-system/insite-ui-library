@@ -1,6 +1,6 @@
 # Build UI library.
 
-name: Build Production
+name: Insitekit UI Build
 
 on:
   push:
