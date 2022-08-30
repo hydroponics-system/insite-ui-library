@@ -1,6 +1,6 @@
 # `insite-kit` - External UI Library
 
-[![Build Status](https://github.com/hydroponics-system/insite-ui-library/actions/workflows/build-production.yml/badge.svg)](https://github.com/hydroponics-system/insite-ui-library/actions)
+[![Build Status](https://github.com/hydroponics-system/insite-ui-library/actions/workflows/build-ui-library.yml/badge.svg)](https://github.com/hydroponics-system/insite-ui-library/actions)
 [![GitHub version](https://badge.fury.io/gh/hydroponics-system%2Finsite-ui-library.svg)](https://badge.fury.io/js/insite-kit)
 
 This project contains the insite-kit library. The main purpose of this library is to provide external components and services to an angular application. The main application that this was created for was [Hydroponics UI](https://github.com/hydroponics-system/hydro-ui). This application became very complex, therefore abstracting out he common components and putting them in a seperate package to be used and tested individually made the development process easier.
