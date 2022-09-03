@@ -1,14 +1,5 @@
 export interface Notification {
-  id?: number;
-  body?: NotificationBody;
-  userId?: number;
-  destination?: string;
-  action?: NotificationAction;
-  created?: string | Date;
-}
-
-export interface NotificationBody {
-  bodyType: NotificationType;
+  bodyType?: NotificationType;
   [x: string]: any;
 }
 

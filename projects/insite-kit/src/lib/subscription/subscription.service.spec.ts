@@ -50,7 +50,7 @@ describe('SubscriptionService', () => {
   });
 
   it('should listen to the connection on the socket path for unique user', (done) => {
-    service.listen('new/path', true).subscribe((res) => {
+    service.listen('new/path', true).subscribe((res: any) => {
       expect(service.watch).toHaveBeenCalledWith('new/path-fakeUUID');
       expect(res.id).toEqual(1);
       done();

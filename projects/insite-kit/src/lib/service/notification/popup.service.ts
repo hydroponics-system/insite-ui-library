@@ -26,8 +26,8 @@ export class PopupService {
    */
   showNotification(notification: Notification): ActiveToast<any> {
     return this.toastService.show(
-      this.determineMessage(notification.body.bodyType),
-      this.determineTitle(notification.body.bodyType),
+      this.determineMessage(notification.bodyType),
+      this.determineTitle(notification.bodyType),
       {
         toastComponent: NotificationPopupComponent,
         timeOut: this.timeout,

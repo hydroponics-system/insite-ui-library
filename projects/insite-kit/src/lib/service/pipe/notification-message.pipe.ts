@@ -5,7 +5,7 @@ import { Notification, NotificationType } from '../../model/notification.model';
 export class NotificationMessagePipe implements PipeTransform {
   transform(notification: Notification) {
     if (notification) {
-      return this.determineMessage(notification.body.bodyType);
+      return this.determineMessage(notification.bodyType);
     } else {
       return 'New Request';
     }
